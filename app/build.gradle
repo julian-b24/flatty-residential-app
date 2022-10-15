@@ -16,10 +16,6 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
-    binding{
-        enable = true
-    }
-
     buildTypes {
         release {
             minifyEnabled false
@@ -32,6 +28,10 @@ android {
     }
     kotlinOptions {
         jvmTarget = '1.8'
+    }
+
+    viewBinding{
+        enabled = true
     }
 }
 
