@@ -20,7 +20,12 @@ class SignUpPage1 : AppCompatActivity() {
         }
 
         binding.continuePage1Btn.setOnClickListener{
-            var intent = Intent(this, SignUpPage2::class.java)
+            var intent = Intent(this, SignUpPage2::class.java).apply {
+                putExtra("name", binding.nameET.editText?.text.toString())
+                putExtra("phone", binding.phoneET.editText?.text.toString())
+                putExtra("numberApartment", binding.numberApartmentET.editText?.text.toString())
+                putExtra("age", binding.ageET.editText?.text.toString())
+            }
             restarTextFields()
             startActivity(intent)
         }

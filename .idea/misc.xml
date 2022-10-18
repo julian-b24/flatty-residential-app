@@ -3,6 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Giova/OneDrive/Escritorio/flatty-residential-app/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1945" />
+        <entry key="..\:/Users/Giova/OneDrive/Escritorio/flatty-residential-app/app/src/main/res/drawable/gio_low_arrow.xml" value="0.2075" />
+        <entry key="..\:/Users/Giova/OneDrive/Escritorio/flatty-residential-app/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1945" />
+        <entry key="..\:/Users/Giova/OneDrive/Escritorio/flatty-residential-app/app/src/main/res/drawable/pexels_mart_production_7415035_1.xml" value="0.2005" />
+        <entry key="..\:/Users/Giova/OneDrive/Escritorio/flatty-residential-app/app/src/main/res/font/roboto_bold.xml" value="0.10677083333333333" />
+        <entry key="..\:/Users/Giova/OneDrive/Escritorio/flatty-residential-app/app/src/main/res/font/roboto_medium.xml" value="0.10677083333333333" />
+        <entry key="..\:/Users/Giova/OneDrive/Escritorio/flatty-residential-app/app/src/main/res/layout/activity_edit_profile.xml" value="0.2" />
+        <entry key="..\:/Users/Giova/OneDrive/Escritorio/flatty-residential-app/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/Giova/OneDrive/Escritorio/flatty-residential-app/app/src/main/res/layout/chat_page.xml" value="0.25" />
+        <entry key="..\:/Users/Giova/OneDrive/Escritorio/flatty-residential-app/app/src/main/res/layout/fragment_quejas.xml" value="0.2" />
+        <entry key="..\:/Users/Giova/OneDrive/Escritorio/flatty-residential-app/app/src/main/res/layout/login_page_resident.xml" value="0.2" />
+        <entry key="..\:/Users/Giova/OneDrive/Escritorio/flatty-residential-app/app/src/main/res/layout/message_row.xml" value="0.5" />
+        <entry key="..\:/Users/Giova/OneDrive/Escritorio/flatty-residential-app/app/src/main/res/layout/queja_row.xml" value="0.33" />
+        <entry key="..\:/Users/Giova/OneDrive/Escritorio/flatty-residential-app/app/src/main/res/layout/quejas_page.xml" value="0.25" />
+        <entry key="..\:/Users/Giova/OneDrive/Escritorio/flatty-residential-app/app/src/main/res/layout/welcome_page.xml" value="0.2" />
+        <entry key="..\:/Users/Giova/OneDrive/Escritorio/flatty-residential-app/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1945" />
         <entry key="..\:/Users/julia/OneDrive - Universidad Icesi (@icesi.edu.co)/Documents/ICESI/2022-2/Apps/Flatty/flatty-residential-app/app/src/main/res/font/roboto.xml" value="0.396875" />
         <entry key="..\:/Users/julia/OneDrive - Universidad Icesi (@icesi.edu.co)/Documents/ICESI/2022-2/Apps/Flatty/flatty-residential-app/app/src/main/res/font/roboto_medium.xml" value="0.21875" />
         <entry key="..\:/Users/julia/OneDrive - Universidad Icesi (@icesi.edu.co)/Documents/ICESI/2022-2/Apps/Flatty/flatty-residential-app/app/src/main/res/layout/activity_edit_profile.xml" value="0.5" />
