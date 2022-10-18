@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context = ".view.SignUpPage2">
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/emailET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="26dp"
+        android:background="@drawable/input_text_shape"
+        android:hint="Email"
+        android:textAppearance="@font/roboto"
+        android:textColor="#000000"
+        app:hintTextColor="@color/orange"
+        app:boxBackgroundColor="#F6F6F6"
+        app:boxStrokeColor="#00ffffff"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        app:shapeAppearance="?attr/shapeAppearanceLargeComponent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/emailP2TI"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@drawable/orange_cursor"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/passwordET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="26dp"
+        android:background="@drawable/input_text_shape"
+        android:hint="Contraseña"
+        android:textAppearance="@font/roboto"
+        android:textColor="#000000"
+        app:hintTextColor="@color/orange"
+        app:boxBackgroundColor="#F6F6F6"
+        app:boxStrokeColor="#00ffffff"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="2dp"
+        app:endIconMode="password_toggle"
+        app:endIconTint="#B8B8B8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/emailET"
+
+        app:shapeAppearance="?attr/shapeAppearanceLargeComponent"
+        >
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/passwordP2TI"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@drawable/orange_cursor"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/confirmPasswordET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="26dp"
+        android:background="@drawable/input_text_shape"
+        android:hint="Confirmar contraseña"
+        android:textAppearance="@font/roboto"
+        android:textColor="#000000"
+        app:hintTextColor="@color/orange"
+        app:endIconMode="password_toggle"
+        app:boxBackgroundColor="#F6F6F6"
+        app:boxStrokeColor="#00ffffff"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="2dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passwordET"
+        app:shapeAppearance="?attr/shapeAppearanceLargeComponent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/confirmPasswordP2TI"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@drawable/orange_cursor"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/continuePage2Btn"
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:layout_width="308dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="64dp"
+        android:text="Continuar"
+
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        app:backgroundTint="#FF642F"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/termsConditionsCB" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/returnP2Constraint"
+        app:srcCompat="@drawable/icon_sign_up2" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="44dp"
+        android:fontFamily="@font/roboto_black_italic"
+        android:text="Email"
+        android:textColor="#000000"
+        android:textSize="21dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Ingresa un email y tu contraseña"
+        app:layout_constraintStart_toStartOf="@+id/textView13"
+        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+
+    <CheckBox
+        android:theme="@style/CheckBoxColor"
+        android:id="@+id/termsConditionsCB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:text="Acepto términos y condiciones"
+        app:layout_constraintStart_toStartOf="@+id/confirmPasswordET"
+        app:layout_constraintTop_toBottomOf="@+id/confirmPasswordET" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/returnP2Constraint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/returnIconP2Img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_return" />
+
+        <TextView
+            android:id="@+id/returnP2TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Atrás"
+            android:textColor="@color/strong_orange"
+            app:layout_constraintBottom_toBottomOf="@+id/returnIconP2Img"
+            app:layout_constraintStart_toEndOf="@+id/returnIconP2Img"
+            app:layout_constraintTop_toTopOf="@+id/returnIconP2Img" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

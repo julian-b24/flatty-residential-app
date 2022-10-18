@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".view.SignUpPage3"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="-238dp">
+
+    <Button
+        android:id="@+id/continuePage3Btn"
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:layout_width="308dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="195dp"
+
+        android:text="Validar"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        app:backgroundTint="#FF642F"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout3" />
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/returnP3Constraint"
+        app:srcCompat="@drawable/icon_sign_up3" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/returnP3Constraint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/returnPage1TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Atrás"
+            android:textColor="#FF642F"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/returnIconP2Img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/returnPage1TV"
+            app:layout_constraintEnd_toStartOf="@+id/returnPage1TV"
+            app:layout_constraintTop_toTopOf="@+id/returnPage1TV"
+            app:srcCompat="@drawable/icon_return" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="41dp"
+        android:fontFamily="@font/roboto_black_italic"
+        android:text="Verificación"
+        android:textColor="#000000"
+        android:textSize="21dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/imageView8"
+        app:layout_constraintStart_toStartOf="@+id/imageView8"
+        app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="13dp"
+        android:text="Hemos enviado un código a tu correo"
+        app:layout_constraintEnd_toEndOf="@+id/textView11"
+        app:layout_constraintStart_toStartOf="@+id/textView11"
+        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        app:layout_constraintEnd_toEndOf="@+id/textView12"
+        app:layout_constraintStart_toStartOf="@+id/textView12"
+        app:layout_constraintTop_toBottomOf="@+id/textView12">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/verifyCode1ET"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/input_text_shape"
+            android:textAppearance="@font/roboto"
+            app:boxBackgroundColor="#F6F6F6"
+            app:boxStrokeColor="#00ffffff"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearance="?attr/shapeAppearanceLargeComponent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/verifyCode1TI"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/roboto"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@drawable/orange_cursor"
+                android:maxLength="1"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/verifyCode2ET"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="15dp"
+            android:background="@drawable/input_text_shape"
+            android:textAppearance="@font/roboto"
+            app:boxBackgroundColor="#F6F6F6"
+            app:boxStrokeColor="#00ffffff"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/verifyCode1ET"
+            app:layout_constraintStart_toEndOf="@+id/verifyCode1ET"
+            app:layout_constraintTop_toTopOf="@+id/verifyCode1ET"
+            app:shapeAppearance="?attr/shapeAppearanceLargeComponent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/verifyCode2TI"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/roboto"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@drawable/orange_cursor"
+                android:maxLength="1"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/verifyCode3ET"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="15dp"
+            android:background="@drawable/input_text_shape"
+            android:textAppearance="@font/roboto"
+            app:boxBackgroundColor="#F6F6F6"
+            app:boxStrokeColor="#00ffffff"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/verifyCode2ET"
+            app:layout_constraintStart_toEndOf="@+id/verifyCode2ET"
+            app:layout_constraintTop_toTopOf="@+id/verifyCode2ET"
+            app:shapeAppearance="?attr/shapeAppearanceLargeComponent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/verifyCode3TI"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/roboto"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@drawable/orange_cursor"
+                android:maxLength="1"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/verifyCode4ET"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="15dp"
+            android:background="@drawable/input_text_shape"
+            android:textAppearance="@font/roboto"
+            app:boxBackgroundColor="#F6F6F6"
+            app:boxStrokeColor="#00ffffff"
+            app:boxStrokeWidth="0dp"
+            app:boxStrokeWidthFocused="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/verifyCode3ET"
+            app:layout_constraintStart_toEndOf="@+id/verifyCode3ET"
+            app:layout_constraintTop_toTopOf="@+id/verifyCode3ET"
+            app:shapeAppearance="?attr/shapeAppearanceLargeComponent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/verifyCode4TI"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/roboto"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textCursorDrawable="@drawable/orange_cursor"
+                android:maxLength="1"
+                android:inputType="number"
+                tools:ignore="SpeakableTextPresentCheck" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    v
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="@+id/constraintLayout2"
+        app:layout_constraintStart_toStartOf="@+id/constraintLayout2"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No recibiste el código?"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enviar de nuevo"
+            android:textColor="@color/strong_orange"
+            app:layout_constraintBottom_toBottomOf="@+id/textView3"
+            app:layout_constraintStart_toEndOf="@+id/textView3"
+            app:layout_constraintTop_toTopOf="@+id/textView3" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
