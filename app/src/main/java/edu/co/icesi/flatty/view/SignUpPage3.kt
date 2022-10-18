@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import edu.co.icesi.flatty.databinding.SignUpPage3Binding
+import edu.co.icesi.flatty.models.Resident
 import java.util.*
 
 class SignUpPage3 : AppCompatActivity() {
@@ -68,10 +69,13 @@ class SignUpPage3 : AppCompatActivity() {
     }
 
     private fun createAccount(name:String, phone:String, numberApartment:String, age:String, email:String, password:String){
-        /*Firebase.auth.createUserWithEmailAndPassword(
-
+        Firebase.auth.createUserWithEmailAndPassword(
+            email, password
         ).addOnSuccessListener {
+            val id = Firebase.auth.currentUser?.uid
 
-        }*/
+            var resident = Resident(id!!,name, phone, numberApartment,age, email)
+            //Firebase.firestore.collection().document(id).set(resident)
+        }
     }
 }

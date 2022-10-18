@@ -4,18 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-import androidx.recyclerview.widget.LinearLayoutManager
-import edu.co.icesi.flatty.databinding.ActivityMainBinding
-import edu.co.icesi.flatty.gioMessages.Mensaje
-import edu.co.icesi.flatty.gioMessages.MensajesAdapter
-import edu.co.icesi.flatty.gioMessages.TypeShows
-import edu.co.icesi.flatty.quejas.QuejasAdapter
-import kotlinx.android.synthetic.main.chat_page.*
-import kotlinx.android.synthetic.main.quejas_page.*
 import edu.co.icesi.flatty.databinding.ActivityResidentProfilePageBinding
 import edu.co.icesi.flatty.databinding.WelcomePageBinding
-import edu.co.icesi.flatty.view.LoginPageResident
-import edu.co.icesi.flatty.view.ResidentProfilePage
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -51,12 +42,17 @@ class MainActivity : AppCompatActivity() {
         }
     }*/
 
-    private lateinit var binding:ActivityResidentProfilePageBinding
+    private lateinit var binding:WelcomePageBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityResidentProfilePageBinding.inflate(layoutInflater)
+        binding = WelcomePageBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        binding.loginBtn.setOnClickListener{
+            val intent = Intent(this,WelcomePageBinding::class.java)
+            startActivity(intent)
+        }
     }
 }
