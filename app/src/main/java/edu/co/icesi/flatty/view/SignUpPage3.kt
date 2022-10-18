@@ -3,6 +3,8 @@ package edu.co.icesi.flatty.view
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import edu.co.icesi.flatty.databinding.SignUpPage3Binding
 import java.util.*
 
@@ -14,6 +16,13 @@ class SignUpPage3 : AppCompatActivity() {
         binding = SignUpPage3Binding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        val name = intent.extras?.getString("name")
+        val phone = intent.extras?.getString("phone")
+        val numberApartment = intent.extras?.getString("numberApartment")
+        val age = intent.extras?.getString("age")
+        val email = intent.extras?.getString("email")
+        val password = intent.extras?.getString("password")
 
         var code = generatedRandomCode()
         Toast.makeText(this, "Codigo = $code", Toast.LENGTH_SHORT).show()
@@ -38,23 +47,31 @@ class SignUpPage3 : AppCompatActivity() {
         }
     }
 
-    private fun generatedRandomCode() : Int {
+    private fun generatedRandomCode() : String {
         var newCode = ""
         var start = 0
         var end = 9
         for (i in 1..4) {
             newCode += Random(System.nanoTime()).nextInt(end - start + 1) + start
         }
-        return newCode.toInt()
+        return newCode
     }
 
-    private fun getCodeSent(): Int {
+    private fun getCodeSent(): String {
         var receivedCode = ""
         receivedCode += binding.verifyCode1TI.text.toString()
         receivedCode += binding.verifyCode2TI.text.toString()
         receivedCode += binding.verifyCode3TI.text.toString()
         receivedCode += binding.verifyCode4TI.text.toString()
 
-        return receivedCode.toInt()
+        return receivedCode
+    }
+
+    private fun createAccount(name:String, phone:String, numberApartment:String, age:String, email:String, password:String){
+        /*Firebase.auth.createUserWithEmailAndPassword(
+
+        ).addOnSuccessListener {
+
+        }*/
     }
 }

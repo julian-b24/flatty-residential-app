@@ -12,12 +12,14 @@ import edu.co.icesi.flatty.gioMessages.TypeShows
 import edu.co.icesi.flatty.quejas.QuejasAdapter
 import kotlinx.android.synthetic.main.chat_page.*
 import kotlinx.android.synthetic.main.quejas_page.*
+import edu.co.icesi.flatty.databinding.ActivityResidentProfilePageBinding
 import edu.co.icesi.flatty.databinding.WelcomePageBinding
 import edu.co.icesi.flatty.view.LoginPageResident
+import edu.co.icesi.flatty.view.ResidentProfilePage
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding: WelcomePageBinding
+    /*private lateinit var binding: WelcomePageBinding
 
     private lateinit var layoutManager: LinearLayoutManager
     private lateinit var adapter : QuejasAdapter
@@ -47,5 +49,14 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,LoginPageResident::class.java)
             startActivity(intent)
         }
+    }*/
+
+    private lateinit var binding:ActivityResidentProfilePageBinding
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityResidentProfilePageBinding.inflate(layoutInflater)
+        val view = binding.root
+        setContentView(view)
     }
 }

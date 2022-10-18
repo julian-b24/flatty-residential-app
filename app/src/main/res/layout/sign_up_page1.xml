@@ -14,7 +14,6 @@
         android:layout_marginTop="37dp"
         android:text="Continuar"
         android:textColor="#ffffff"
-
         android:textStyle="bold"
         app:backgroundTint="#FF642F"
         app:layout_constraintEnd_toEndOf="parent"
