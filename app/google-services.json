@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "524279659873",
+    "project_id": "flatty-c97aa",
+    "storage_bucket": "flatty-c97aa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:524279659873:android:5be01393189715481d9920",
+        "android_client_info": {
+          "package_name": "edu.co.icesi.flatty"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "524279659873-4mec4ce4kkvt88p8ifom9m72op3rtvk6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsYnOzSlLUGElA4IZR4WN6vizm55g9Lt4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "524279659873-4mec4ce4kkvt88p8ifom9m72op3rtvk6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
