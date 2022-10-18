@@ -10,7 +10,7 @@
     tools:layout_editor_absoluteY="-238dp">
 
     <Button
-        android:id="@+id/continuePage3Btn"
+        android:id="@+id/validatePage3Btn"
         style="@style/Widget.Material3.Button.ElevatedButton"
         android:layout_width="308dp"
         android:layout_height="48dp"
@@ -234,7 +234,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/resendP3TV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Enviar de nuevo"
