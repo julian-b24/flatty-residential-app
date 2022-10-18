@@ -1,11 +1,8 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
-<<<<<<< HEAD
     id 'kotlin-android-extensions'
-=======
     id 'com.google.gms.google-services'
->>>>>>> ed10b9737146eaf2fa5964633d5311b5f1bb112a
 }
 
 android {
