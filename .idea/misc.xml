@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+gt<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
@@ -10,6 +10,7 @@
         <entry key="..\:/Users/samue/flatty-residential-app/app/src/main/res/drawable/multiline_text_background.xml" value="0.243" />
         <entry key="..\:/Users/samue/flatty-residential-app/app/src/main/res/drawable/send_button.xml" value="0.243" />
         <entry key="..\:/Users/samue/flatty-residential-app/app/src/main/res/layout/activity_create_complaint.xml" value="0.4" />
+        <entry key="..\:/Users/samue/flatty-residential-app/app/src/main/res/layout/fragment_chat_watch_man.xml" value="0.24048913043478262" />
         <entry key="..\:/Users/samue/flatty-residential-app/app/src/main/res/layout/sign_up_page1.xml" value="0.25416666666666665" />
       </map>
     </option>
