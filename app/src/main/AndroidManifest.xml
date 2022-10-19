@@ -7,7 +7,7 @@
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/logo"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
@@ -23,18 +23,38 @@
             android:name=".view.ProfileSearchedPage"
             android:exported="false" />
         <activity
+            android:name=".view.CreateComplaint"
+            android:exported="false" />
+
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+
+        <activity
+            android:name=".view.ResidentProfilePage"
+            android:exported="false"/>
+
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity
-            android:name=".EditProfile"
-            android:exported="false" />
 
+        <activity
+            android:name=".view.LoginPageResident"
+            android:exported="false"></activity>
+        <activity
+            android:name=".view.SignUpPage1"
+            android:exported="false"></activity>
+        <activity
+            android:name=".view.SignUpPage2"
+            android:exported="false"></activity>
+        <activity
+            android:name=".view.SignUpPage3"
+            android:exported="false"></activity>
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

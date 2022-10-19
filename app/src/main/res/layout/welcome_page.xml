@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pexels_mart_production_7415035_1">
+    android:background="@drawable/pexels_mart_production_7415035_2">
 
     <TextView
         android:id="@+id/textView7"
@@ -20,18 +20,19 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
 
     <Button
-        android:id="@+id/button5"
         style="@style/Widget.Material3.Button.ElevatedButton"
+        android:id="@+id/loginBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:text="Inicia aquí"
         android:textColor="#ffffff"
         android:textStyle="bold"
-        app:backgroundTint="#FF642F"
+        app:backgroundTint="@color/strong_orange"
         app:layout_constraintEnd_toEndOf="@+id/textView7"
         app:layout_constraintStart_toStartOf="@+id/textView7"
-        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -63,6 +64,6 @@
             app:layout_constraintBottom_toBottomOf="@+id/textView"
             app:layout_constraintEnd_toStartOf="@+id/textView"
             app:layout_constraintTop_toTopOf="@+id/textView"
-            app:srcCompat="@drawable/icon_white" />
+            app:srcCompat="@drawable/icon_flatty" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

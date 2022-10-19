@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".view.SignUpPage1" >
+    <Button
+        android:id="@+id/continuePage1Btn"
+        style="@style/Widget.Material3.Button.ElevatedButton"
+        android:layout_width="308dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="37dp"
+        android:text="Continuar"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        app:backgroundTint="#FF642F"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ageET" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/nameET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginEnd="26dp"
+        android:background="@drawable/input_text_shape"
+        android:hint="Nombre Completo"
+        android:textAppearance="@font/roboto"
+        app:hintTextColor="@color/orange"
+        app:boxBackgroundColor="#F6F6F6"
+        app:boxStrokeColor="#00ffffff"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="2dp"
+        app:endIconMode="custom"
+        app:endIconTint="#FF642F"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10"
+        app:shapeAppearance="?attr/shapeAppearanceLargeComponent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/nameTI"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@drawable/orange_cursor"
+            android:inputType="textPersonName"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/phoneET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="26dp"
+        android:background="@drawable/input_text_shape"
+        android:hint="Teléfono"
+        android:textAppearance="@font/roboto"
+        android:textColor="#000000"
+        app:hintTextColor="@color/orange"
+        app:boxBackgroundColor="#F6F6F6"
+        app:boxStrokeColor="#00ffffff"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="2dp"
+        app:endIconMode="custom"
+        app:endIconTint="#FF642F"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameET"
+        app:shapeAppearance="?attr/shapeAppearanceLargeComponent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/phoneTI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@drawable/orange_cursor"
+            android:inputType="number"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/numberApartmentET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="26dp"
+        android:background="@drawable/input_text_shape"
+        android:hint="No. Apartamento"
+        android:textAppearance="@font/roboto"
+        android:textColor="#000000"
+        app:hintTextColor="@color/orange"
+        app:boxBackgroundColor="#F6F6F6"
+        app:boxStrokeColor="#00ffffff"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="2dp"
+        app:endIconMode="custom"
+        app:endIconTint="#FF642F"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/phoneET"
+        app:shapeAppearance="?attr/shapeAppearanceLargeComponent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/numberApartmentTI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@drawable/orange_cursor"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ageET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="26dp"
+        android:background="@drawable/input_text_shape"
+        android:hint="Edad"
+        android:textAppearance="@font/roboto"
+        android:textColor="#000000"
+        app:hintTextColor="@color/orange"
+        app:boxBackgroundColor="#F6F6F6"
+        app:boxStrokeColor="#00ffffff"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="2dp"
+        app:endIconMode="custom"
+        app:endIconTint="#FF642F"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/numberApartmentET"
+        app:shapeAppearance="?attr/shapeAppearanceLargeComponent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ageTI"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/black"
+            android:textCursorDrawable="@drawable/orange_cursor"
+            android:inputType="number"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/returnP1Constrain"
+        app:srcCompat="@drawable/icon_sign_up1" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="45dp"
+        android:fontFamily="@font/roboto_black_italic"
+        android:text="Crear una cuenta"
+        android:textColor="#000000"
+        android:textSize="21dp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Añade tus datos para poder continuar"
+        app:layout_constraintStart_toStartOf="@+id/textView9"
+        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/returnP1Constrain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="28dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/returnIconP1Img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icon_return" />
+
+        <TextView
+            android:id="@+id/returnP1TV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Atrás"
+            android:textColor="@color/strong_orange"
+            app:layout_constraintBottom_toBottomOf="@+id/returnIconP1Img"
+            app:layout_constraintStart_toEndOf="@+id/returnIconP1Img"
+            app:layout_constraintTop_toTopOf="@+id/returnIconP1Img" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

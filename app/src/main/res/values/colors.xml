@@ -7,6 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+<<<<<<< HEAD
     <color name="black_name">#272727</color>
     <color name="grey_flatty" />
     <color name="grey_flatty2">#8B8B8B</color>
@@ -14,4 +15,12 @@
     <color name="orangebtnphone">#80F89344</color>
     <color name="orange_Flatty">#FF642F</color>
     <color name="greyA5A5A5">#A5A5A5</color>
+=======
+    <color name="strong_orange">#FFFF642F</color>
+    <color name="orange">#FFF89344</color>
+    <color name="gray">#FF8B8B8B</color>
+    <color name="orange_degraded">#37F89344</color>
+    <color name="gray_degraged">#378B8B8B</color>
+    <color name="transparent">#00000000</color>
+>>>>>>> b5993d8a4d23d91a1a1ef26504ad2620fb98b0cc
 </resources>
