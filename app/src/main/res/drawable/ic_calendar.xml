@@ -1,19 +1,10 @@
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
-<<<<<<< HEAD
     android:width="18dp"
     android:height="20dp"
     android:viewportWidth="18"
     android:viewportHeight="20">
   <path
       android:pathData="M12,1V5M6,1V5M1,9H17M17,9V17C17,18.105 16.105,19 15,19H3C1.895,19 1,18.105 1,17V5C1,3.895 1.895,3 3,3H15C16.105,3 17,3.895 17,5V9Z"
-=======
-    android:width="24dp"
-    android:height="24dp"
-    android:viewportWidth="24"
-    android:viewportHeight="24">
-  <path
-      android:pathData="M15,3V7M9,3V7M4,11H20M20,11V19C20,20.105 19.105,21 18,21H6C4.895,21 4,20.105 4,19V7C4,5.895 4.895,5 6,5H18C19.105,5 20,5.895 20,7V11Z"
->>>>>>> b5993d8a4d23d91a1a1ef26504ad2620fb98b0cc
       android:strokeLineJoin="round"
       android:strokeWidth="1.5"
       android:fillColor="#00000000"
