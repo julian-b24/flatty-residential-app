@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".view.FavouritesPages">
+
+    <Button
+        android:id="@+id/btnBackToSearchedPage"
+        android:layout_width="90dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@android:color/transparent"
+        android:paddingLeft="2dp"
+        android:paddingTop="2dp"
+        android:paddingEnd="2dp"
+        android:paddingBottom="2dp"
+        android:text="Favoritos"
+        android:textColor="@color/orange_Flatty"
+        android:textSize="14dp"
+        app:icon="@drawable/ic_back_icon"
+        app:iconPadding="0dp"
+        app:iconTint="@color/orange_Flatty"
+        app:iconTintMode="src_atop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:context="ProfileSearchedPage"
+        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/nameResident"
+        android:layout_width="244dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="22dp"
+        android:text=" Miriam Londoño"
+        android:textAlignment="viewStart"
+        android:textColor="@color/black_name"
+        android:textSize="21sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnBackToSearchedPage" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="20dp"
+        android:text="Lista de favoritos del residente "
+        android:textSize="14sp"
+        android:textColor="#8B8B8B"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameResident" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="33dp"
+        android:text="Personas"
+        android:textColor="#FF642F"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="18dp"
+        android:text="Vehículos"
+        android:textColor="#3463BB"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout4" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout4"
+        android:layout_width="359dp"
+        android:layout_height="140dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="113dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="16dp"
+            android:text="Isabela Muñoz"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/imageView9"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView22"
+            android:layout_width="113dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="16dp"
+            android:text="Santiago Martinez"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/imageView17"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="113dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="16dp"
+            android:text="Sofia Gomez"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/imageView9"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="113dp"
+            android:layout_height="13dp"
+            android:layout_marginStart="10dp"
+            android:text="1.003.589.562"
+            android:textSize="8sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView9"
+            app:layout_constraintTop_toBottomOf="@+id/textView6" />
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="113dp"
+            android:layout_height="13dp"
+            android:layout_marginStart="10dp"
+            android:text="1.963.123.859"
+            android:textSize="8sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView17"
+            app:layout_constraintTop_toBottomOf="@+id/textView22" />
+
+        <TextView
+            android:id="@+id/textView19"
+            android:layout_width="113dp"
+            android:layout_height="13dp"
+            android:layout_marginStart="10dp"
+            android:text="1.510.113.778"
+            android:textSize="8sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView9"
+            app:layout_constraintTop_toBottomOf="@+id/textView18" />
+
+        <ImageView
+            android:id="@+id/imageView9"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_person_shape"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_person_favourite" />
+
+        <ImageView
+            android:id="@+id/imageView17"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_person_shape"
+            app:layout_constraintStart_toEndOf="@+id/textView6"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_person_favourite" />
+
+        <ImageView
+            android:id="@+id/imageView13"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_person_shape"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView9"
+            app:srcCompat="@drawable/ic_person_favourite" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="358dp"
+        android:layout_height="245dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView24">
+
+        <TextView
+            android:id="@+id/textView27"
+            android:layout_width="113dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="16dp"
+            android:text="Apache 160 TVS"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/imageView19"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView26"
+            android:layout_width="113dp"
+            android:layout_height="13dp"
+            android:layout_marginStart="10dp"
+            android:text="JVC 562"
+            android:textSize="8sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView18"
+            app:layout_constraintTop_toBottomOf="@+id/textView25" />
+
+        <TextView
+            android:id="@+id/textView28"
+            android:layout_width="113dp"
+            android:layout_height="13dp"
+            android:layout_marginStart="10dp"
+            android:text="CMM 28E"
+            android:textSize="8sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView19"
+            app:layout_constraintTop_toBottomOf="@+id/textView27" />
+
+        <TextView
+            android:id="@+id/textView25"
+            android:layout_width="113dp"
+            android:layout_height="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="16dp"
+            android:text="Aveo Family"
+            android:textSize="12dp"
+            app:layout_constraintStart_toEndOf="@+id/imageView18"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageView18"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="29dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_vehicle_shape"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_directions_car" />
+
+        <ImageView
+            android:id="@+id/imageView19"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/button_vehicle_shape"
+            app:layout_constraintStart_toEndOf="@+id/textView26"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_two_wheeler" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

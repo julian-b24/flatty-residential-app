@@ -3,6 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Icesi/Septimo Semestre/Apps Moviles/flatty-residential-app/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="..\:/Icesi/Septimo Semestre/Apps Moviles/flatty-residential-app/app/src/main/res/drawable/button_grey_shape.xml" value="0.2765" />
+        <entry key="..\:/Icesi/Septimo Semestre/Apps Moviles/flatty-residential-app/app/src/main/res/drawable/button_orange_shape.xml" value="0.1" />
+        <entry key="..\:/Icesi/Septimo Semestre/Apps Moviles/flatty-residential-app/app/src/main/res/drawable/button_person_shape.xml" value="0.2775" />
+        <entry key="..\:/Icesi/Septimo Semestre/Apps Moviles/flatty-residential-app/app/src/main/res/drawable/button_vehicle_shape.xml" value="0.2775" />
+        <entry key="..\:/Icesi/Septimo Semestre/Apps Moviles/flatty-residential-app/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
+        <entry key="..\:/Icesi/Septimo Semestre/Apps Moviles/flatty-residential-app/app/src/main/res/drawable/phone_orange.xml" value="0.1" />
+        <entry key="..\:/Icesi/Septimo Semestre/Apps Moviles/flatty-residential-app/app/src/main/res/drawable/search_bar_shape.xml" value="0.2775" />
+        <entry key="..\:/Icesi/Septimo Semestre/Apps Moviles/flatty-residential-app/app/src/main/res/drawable/shape.xml" value="0.1" />
+        <entry key="..\:/Icesi/Septimo Semestre/Apps Moviles/flatty-residential-app/app/src/main/res/layout/activity_edit_profile.xml" value="0.17255434782608695" />
+        <entry key="..\:/Icesi/Septimo Semestre/Apps Moviles/flatty-residential-app/app/src/main/res/layout/activity_favourites_pages.xml" value="0.5" />
+        <entry key="..\:/Icesi/Septimo Semestre/Apps Moviles/flatty-residential-app/app/src/main/res/layout/activity_main.xml" value="0.17255434782608695" />
+        <entry key="..\:/Icesi/Septimo Semestre/Apps Moviles/flatty-residential-app/app/src/main/res/layout/activity_profile_searched_page.xml" value="0.67" />
+        <entry key="..\:/Icesi/Septimo Semestre/Apps Moviles/flatty-residential-app/app/src/main/res/layout/activity_search_resident.xml" value="0.33" />
+        <entry key="..\:/Icesi/Septimo Semestre/Apps Moviles/flatty-residential-app/app/src/main/res/layout/fragment_search_resident.xml" value="0.5" />
+        <entry key="..\:/Icesi/Septimo Semestre/Apps Moviles/flatty-residential-app/app/src/main/res/layout/login_page_resident.xml" value="0.17255434782608695" />
+        <entry key="..\:/Icesi/Septimo Semestre/Apps Moviles/flatty-residential-app/app/src/main/res/layout/welcome_page.xml" value="0.17255434782608695" />
+        <entry key="..\:/Icesi/Septimo Semestre/Apps Moviles/flatty-residential-app/app/src/main/res/menu/nav_bar_guard.xml" value="0.409375" />
         <entry key="..\:/Users/julia/OneDrive - Universidad Icesi (@icesi.edu.co)/Documents/ICESI/2022-2/Apps/Flatty/flatty-residential-app/app/src/main/res/font/roboto.xml" value="0.396875" />
         <entry key="..\:/Users/julia/OneDrive - Universidad Icesi (@icesi.edu.co)/Documents/ICESI/2022-2/Apps/Flatty/flatty-residential-app/app/src/main/res/font/roboto_medium.xml" value="0.21875" />
         <entry key="..\:/Users/julia/OneDrive - Universidad Icesi (@icesi.edu.co)/Documents/ICESI/2022-2/Apps/Flatty/flatty-residential-app/app/src/main/res/layout/activity_edit_profile.xml" value="0.5" />
