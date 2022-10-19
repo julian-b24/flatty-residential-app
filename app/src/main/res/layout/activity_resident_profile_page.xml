@@ -8,6 +8,7 @@
     tools:context=".view.ResidentProfilePage">
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationView"
         android:layout_width="410dp"
         android:layout_height="57dp"
         android:background="#ffffff"
@@ -19,6 +20,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="409dp"
         android:layout_height="672dp"
+        android:backgroundTint="@color/orange"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

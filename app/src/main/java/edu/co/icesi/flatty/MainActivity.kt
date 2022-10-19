@@ -5,7 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
 import edu.co.icesi.flatty.databinding.ActivityResidentProfilePageBinding
+import edu.co.icesi.flatty.databinding.LoginPageResidentBinding
 import edu.co.icesi.flatty.databinding.WelcomePageBinding
+import edu.co.icesi.flatty.view.LoginPageResident
+import edu.co.icesi.flatty.view.ResidentProfilePage
 
 
 class MainActivity : AppCompatActivity() {
@@ -51,7 +54,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.loginBtn.setOnClickListener{
-            val intent = Intent(this,WelcomePageBinding::class.java)
+            val intent = Intent(this, LoginPageResident::class.java)
             startActivity(intent)
         }
     }

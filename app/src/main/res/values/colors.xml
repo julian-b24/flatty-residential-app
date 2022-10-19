@@ -12,4 +12,5 @@
     <color name="gray">#FF8B8B8B</color>
     <color name="orange_degraded">#37F89344</color>
     <color name="gray_degraged">#378B8B8B</color>
+    <color name="transparent">#00000000</color>
 </resources>

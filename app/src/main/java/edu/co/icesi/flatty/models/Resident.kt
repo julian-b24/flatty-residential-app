@@ -2,7 +2,7 @@ package edu.co.icesi.flatty.models
 
 class Resident {
 
-    var id: String
+    var id: String //hash
     var name: String
     var phone: String
     var numberApartment: String

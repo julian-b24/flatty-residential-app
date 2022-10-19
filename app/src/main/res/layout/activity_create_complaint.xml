@@ -152,13 +152,15 @@
 
     <Button
         android:id="@+id/sendButton"
+        style="@style/Widget.Material3.Button.ElevatedButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/send_button"
         android:text="Enviar"
         android:textSize="20sp"
+        android:textColor="@color/white"
+        app:backgroundTint="@color/strong_orange"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
