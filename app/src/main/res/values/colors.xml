@@ -8,7 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="black_name">#272727</color>
-    <color name="grey_flatty" />
+    <color name="grey_flatty" ></color>
     <color name="grey_flatty2">#8B8B8B</color>
     <color name="orange_button">#F8934480</color>
     <color name="orangebtnphone">#80F89344</color>
@@ -20,5 +20,4 @@
     <color name="orange_degraded">#37F89344</color>
     <color name="gray_degraged">#378B8B8B</color>
     <color name="transparent">#00000000</color>
->>>>>>> b5993d8a4d23d91a1a1ef26504ad2620fb98b0cc
 </resources>

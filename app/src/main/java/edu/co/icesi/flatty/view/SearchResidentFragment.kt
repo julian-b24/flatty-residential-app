@@ -29,6 +29,10 @@ class SearchResidentFragment : Fragment() {
             var intent = Intent(binding.root.context, ProfileSearchedPage::class.java)
             startActivity(intent)
         }
+        binding.btnBackLogOut.setOnClickListener {
+            var intent = Intent(binding.root.context,LoginPageResident::class.java)
+            startActivity(intent)
+        }
 //        val btnGoToResident: Button  = view.findViewById(R.id.btnGoToResident1)
 //        val btnBackLogOut: Button  = view.findViewById(R.id.btnBackLogOut)
         return view

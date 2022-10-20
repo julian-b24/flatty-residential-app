@@ -20,7 +20,7 @@ class LoginPageResident : AppCompatActivity() {
 
         var selectedResident = true
 
-        binding.iconResidentBtn.setOnClickListener{
+        binding.iconResidentBtn.setOnClickListener {
             changeTypeUser(binding.iconResidentBtn, binding.iconGuardBtn)
             binding.registerConstraint.visibility = View.VISIBLE
             restarTextFields()
@@ -35,12 +35,21 @@ class LoginPageResident : AppCompatActivity() {
         }
 
         binding.registerTV.setOnClickListener {
-            val intent = Intent(this,SignUpPage1::class.java)
+            val intent = Intent(this, SignUpPage1::class.java)
             startActivity(intent)
         }
+
+
+        binding.loginBtn.setOnClickListener {
+            if(!selectedResident){
+                var intent = Intent(this, SearchResident::class.java)
+                startActivity(intent)
+            }
+        }
+
     }
 
-    fun changeTypeUser( selected: MaterialButton, current: MaterialButton){
+    fun changeTypeUser(selected: MaterialButton, current: MaterialButton) {
         selected.setIconTintResource(R.color.orange)
         selected.setBackgroundColor(
             ContextCompat.getColor(binding.root.context, R.color.orange_degraded)
@@ -51,7 +60,7 @@ class LoginPageResident : AppCompatActivity() {
         )
     }
 
-    private fun restarTextFields(){
+    private fun restarTextFields() {
         binding.emailTI.setText("")
         binding.passwordTI.setText("")
     }

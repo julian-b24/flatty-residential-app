@@ -22,7 +22,7 @@ class SearchResident : AppCompatActivity() {
         setContentView(view)
 
         searchResidentFragment = SearchResidentFragment.newInstance()
-
+        showFragment(searchResidentFragment)
         binding.navigator.setOnItemSelectedListener { menuItem->
             if(menuItem.itemId == R.id.itemHome) {
                 showFragment(searchResidentFragment)

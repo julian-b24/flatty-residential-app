@@ -10,20 +10,19 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigator"
-        android:layout_width="361dp"
+        android:layout_width="0dp"
         android:layout_height="57dp"
         android:background="@color/white"
         app:itemRippleColor="@color/orange_Flatty"
         app:itemTextColor="@color/orange_Flatty"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/nav_bar_guard" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/fragmentContainer"
-        android:layout_width="358dp"
+        android:layout_width="0dp"
         android:layout_height="581dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
