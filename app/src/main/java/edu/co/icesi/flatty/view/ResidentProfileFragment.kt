@@ -35,9 +35,11 @@ class ResidentProfileFragment : Fragment() {
             startActivity(Intent(binding.root.context, EditProfile::class.java))
         }
 
+        binding.logoutBtn.setOnClickListener {
+            startActivity(Intent(binding.root.context,LoginPageResident::class.java))
+        }
 
-
-        return inflater.inflate(R.layout.fragment_resident_profile, container, false)
+        return view
     }
 
     companion object {
