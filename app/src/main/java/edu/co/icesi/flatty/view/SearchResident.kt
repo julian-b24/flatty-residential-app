@@ -11,10 +11,12 @@ import edu.co.icesi.flatty.databinding.ActivityFavouritesPagesBinding
 import edu.co.icesi.flatty.databinding.ActivitySearchResidentBinding
 
 class SearchResident : AppCompatActivity() {
+
     private val binding: ActivitySearchResidentBinding by lazy {
         ActivitySearchResidentBinding.inflate(layoutInflater)
     }
     private lateinit var searchResidentFragment: SearchResidentFragment
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

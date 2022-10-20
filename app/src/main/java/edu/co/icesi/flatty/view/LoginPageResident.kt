@@ -2,6 +2,7 @@ package edu.co.icesi.flatty.view
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -42,10 +43,18 @@ class LoginPageResident : AppCompatActivity() {
 
         binding.loginBtn.setOnClickListener {
             if(!selectedResident){
+                Log.e(">>>", "Guardia")
                 var intent = Intent(this, SearchResident::class.java)
+                startActivity(intent)
+
+            }else {
+                Log.e(">>>", "Residente")
+                var intent = Intent(this, ResidentProfilePage::class.java)
                 startActivity(intent)
             }
         }
+
+
 
     }
 

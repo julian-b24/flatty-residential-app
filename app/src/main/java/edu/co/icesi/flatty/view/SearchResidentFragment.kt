@@ -13,6 +13,7 @@ import edu.co.icesi.flatty.databinding.FragmentSearchResidentBinding
 
 
 class SearchResidentFragment : Fragment() {
+
     private lateinit var binding: FragmentSearchResidentBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

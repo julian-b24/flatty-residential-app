@@ -5,18 +5,44 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-class QuejasFragment : Fragment() {
+import androidx.recyclerview.widget.LinearLayoutManager
+import edu.co.icesi.flatty.databinding.FragmentQuejasBinding
+import edu.co.icesi.flatty.quejas.QuejasAdapter
 
+class QuejasFragment : Fragment() {
+    private var _binding: FragmentQuejasBinding? = null
+    private val binding get() = _binding!!
+    private lateinit var layoutManager: LinearLayoutManager
+    private lateinit var adapter : QuejasAdapter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+        _binding = FragmentQuejasBinding.inflate(inflater,container,false)
+        val view = binding.root
+        layoutManager = LinearLayoutManager(binding.root.context)
+        binding.QuejasRecycler.layoutManager = layoutManager
+        binding.QuejasRecycler.setHasFixedSize(true)
+        adapter = QuejasAdapter()
+        binding.QuejasRecycler.adapter = adapter
+
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_quejas, container, false)
+        return view
     }
 
     companion object {
         @JvmStatic
         fun newInstance() = QuejasFragment()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
