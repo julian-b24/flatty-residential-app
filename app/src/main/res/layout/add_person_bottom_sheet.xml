@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/addPersonBottomSheet"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bottom_sheet_background"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Añadir nueva persona"
+        android:textColor="#F89344"
+        android:fontFamily="@font/roboto_bold"
+        android:textStyle="bold"
+        android:textSize="20sp"
+        android:layout_marginBottom="22dp">
+    </TextView>
+
+    <ImageView
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:background="@drawable/orange_square"
+        android:src="@drawable/user_orange"
+        android:padding="6dp"
+        android:layout_marginBottom="15dp">
+    </ImageView>
+
+    <EditText
+        android:id="@+id/newPersonNameET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:layout_marginHorizontal="49dp"
+        android:background="@drawable/edit_text_round_container"
+        android:hint="Nombre"
+        android:layout_marginBottom="12dp"/>
+
+    <EditText
+        android:id="@+id/newPersonIdET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        android:layout_marginHorizontal="49dp"
+        android:background="@drawable/edit_text_round_container"
+        android:hint="Cedula"
+        android:layout_marginBottom="12dp"/>
+
+    <Button
+        android:id="@+id/add_new_personBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="115dp"
+        android:text="Agregar"
+        android:fontFamily="@font/roboto_bold"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        android:textColor="#F89344"
+        android:backgroundTint="#F6F6F6"
+        android:layout_marginBottom="16dp"/>
+
+</LinearLayout>

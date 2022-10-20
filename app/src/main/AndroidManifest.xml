@@ -14,7 +14,13 @@
         android:theme="@style/Theme.Flatty"
         tools:targetApi="31">
         <activity
-            android:name=".EditProfile"
+            android:name=".view.FavouritesListResidentActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.ResidentProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".view.EditProfile"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
