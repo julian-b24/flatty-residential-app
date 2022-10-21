@@ -53,7 +53,10 @@ class CreateComplaint : AppCompatActivity() {
         }
         binding.sendButton.setOnClickListener{
             val intent = Intent(this,CreateComplaint::class.java)
-            startActivity(intent)
+            finish()
+        }
+        binding.backButton.setOnClickListener {
+            finish()
         }
     }
 }
