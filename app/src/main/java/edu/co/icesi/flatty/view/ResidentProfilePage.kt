@@ -17,6 +17,7 @@ class ResidentProfilePage : AppCompatActivity() {
     }
     private lateinit var quejasFragment: QuejasFragment
     private lateinit var residentProfileFragment: ResidentProfileFragment
+    private lateinit var chatResidentFragment: ChatResidentFragment
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +26,7 @@ class ResidentProfilePage : AppCompatActivity() {
 
         quejasFragment = QuejasFragment.newInstance()
         residentProfileFragment = ResidentProfileFragment.newInstance()
+        chatResidentFragment = ChatResidentFragment.newInstance()
 
         showFragment(quejasFragment)
         binding.navigator2.setOnItemSelectedListener { menuItem->
@@ -32,6 +34,8 @@ class ResidentProfilePage : AppCompatActivity() {
                 showFragment(quejasFragment)
             } else if(menuItem.itemId == R.id.profileItem) {
                 showFragment(residentProfileFragment)
+            } else if(menuItem.itemId == R.id.chatItem){
+                showFragment(chatResidentFragment)
             }
             true
         }
