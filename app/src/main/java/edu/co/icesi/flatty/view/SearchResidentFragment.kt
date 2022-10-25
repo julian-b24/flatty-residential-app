@@ -13,6 +13,7 @@ import edu.co.icesi.flatty.databinding.FragmentSearchResidentBinding
 
 
 class SearchResidentFragment : Fragment() {
+
     private lateinit var binding: FragmentSearchResidentBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +28,10 @@ class SearchResidentFragment : Fragment() {
         // Inflate the layout for this fragment
         binding.btnGoToResident1.setOnClickListener {
             var intent = Intent(binding.root.context, ProfileSearchedPage::class.java)
+            startActivity(intent)
+        }
+        binding.btnBackLogOut.setOnClickListener {
+            var intent = Intent(binding.root.context,LoginPageResident::class.java)
             startActivity(intent)
         }
 //        val btnGoToResident: Button  = view.findViewById(R.id.btnGoToResident1)

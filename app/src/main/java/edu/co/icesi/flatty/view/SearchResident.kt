@@ -9,12 +9,16 @@ import com.google.android.material.bottomnavigation.BottomNavigationView
 import edu.co.icesi.flatty.R
 import edu.co.icesi.flatty.databinding.ActivityFavouritesPagesBinding
 import edu.co.icesi.flatty.databinding.ActivitySearchResidentBinding
+import edu.co.icesi.flatty.databinding.FragmentChatListBinding
 
 class SearchResident : AppCompatActivity() {
+
     private val binding: ActivitySearchResidentBinding by lazy {
         ActivitySearchResidentBinding.inflate(layoutInflater)
     }
     private lateinit var searchResidentFragment: SearchResidentFragment
+    private lateinit var chatGuardFragment: ChatGuardFragment
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -22,21 +26,17 @@ class SearchResident : AppCompatActivity() {
         setContentView(view)
 
         searchResidentFragment = SearchResidentFragment.newInstance()
-
+        chatGuardFragment = ChatGuardFragment.newInstance()
+        showFragment(searchResidentFragment)
         binding.navigator.setOnItemSelectedListener { menuItem->
             if(menuItem.itemId == R.id.itemHome) {
                 showFragment(searchResidentFragment)
+            }else if(menuItem.itemId == R.id.itemChat){
+                showFragment(chatGuardFragment)
             }
-//            if(menuItem.itemId == R.id.itemHome){
-//                showFragment(searchResidentFragment)
-//            }else if(menuItem.itemId == R.id.itemChat){
-//                showFragment("nombre del fragmento del chat")
 //            }
             true
         }
-
-
-
 
     }
     fun showFragment(fragment: Fragment){
