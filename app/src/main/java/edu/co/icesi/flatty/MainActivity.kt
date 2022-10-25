@@ -3,18 +3,22 @@ package edu.co.icesi.flatty
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.LinearLayoutManager
+import edu.co.icesi.flatty.databinding.ActivityMainBinding
 
 
 import edu.co.icesi.flatty.databinding.ActivityResidentProfilePageBinding
 import edu.co.icesi.flatty.databinding.LoginPageResidentBinding
 import edu.co.icesi.flatty.databinding.WelcomePageBinding
+import edu.co.icesi.flatty.quejas.QuejasAdapter
 import edu.co.icesi.flatty.view.LoginPageResident
 import edu.co.icesi.flatty.view.ResidentProfilePage
+import edu.co.icesi.flatty.view.SearchResident
 
 
 class MainActivity : AppCompatActivity() {
 
-    /*private lateinit var binding: WelcomePageBinding
+    /*private lateinit var binding: ActivityMainBinding
 
     private lateinit var layoutManager: LinearLayoutManager
     private lateinit var adapter : QuejasAdapter
@@ -39,14 +43,14 @@ class MainActivity : AppCompatActivity() {
             tpMessage.text.clear()
         }*/
 
-        binding = WelcomePageBinding.inflate(layoutInflater)
+        /*binding = WelcomePageBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
 
         binding.loginBtn.setOnClickListener{
             val intent = Intent(this,LoginPageResident::class.java)
             startActivity(intent)
-        }
+        }*/
     }*/
 
     private lateinit var binding:WelcomePageBinding

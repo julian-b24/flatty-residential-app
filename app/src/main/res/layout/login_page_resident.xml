@@ -38,7 +38,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto"
             android:textColor="@color/black"
-            android:textCursorDrawable="@drawable/orange_cursor" />
+            android:textCursorDrawable="@drawable/orange_cursor"
+            android:maxLength="30"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -107,7 +108,8 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto"
             android:textColor="@color/black"
-            android:textCursorDrawable="@drawable/orange_cursor" />
+            android:textCursorDrawable="@drawable/orange_cursor"
+            android:maxLength="30"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 

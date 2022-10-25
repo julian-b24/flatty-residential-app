@@ -20,5 +20,5 @@
     <color name="orange_degraded">#37F89344</color>
     <color name="gray_degraged">#378B8B8B</color>
     <color name="transparent">#00000000</color>
->>>>>>> b5993d8a4d23d91a1a1ef26504ad2620fb98b0cc
+    <color name="red">#ffff3333</color>
 </resources>

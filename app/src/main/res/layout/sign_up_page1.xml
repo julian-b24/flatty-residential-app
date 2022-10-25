@@ -18,10 +18,10 @@
         app:backgroundTint="#FF642F"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ageET" />
+        app:layout_constraintTop_toBottomOf="@+id/ageP1ET" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/nameET"
+        android:id="@+id/nameP1ET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
@@ -35,13 +35,16 @@
         app:boxStrokeColor="#00ffffff"
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="2dp"
-        app:endIconMode="custom"
-        app:endIconTint="#FF642F"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10"
-        app:shapeAppearance="?attr/shapeAppearanceLargeComponent">
+        app:shapeAppearance="?attr/shapeAppearanceLargeComponent"
+        app:counterEnabled="true"
+        app:counterMaxLength="30"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@drawable/warning_icon"
+        app:errorIconTint="@color/design_default_color_error">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/nameTI"
@@ -50,12 +53,13 @@
             android:fontFamily="@font/roboto"
             android:textColor="@color/black"
             android:textCursorDrawable="@drawable/orange_cursor"
-            android:inputType="textPersonName"/>
+            android:inputType="textPersonName"
+            android:maxLength="30"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/phoneET"
+        android:id="@+id/phoneP1ET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
@@ -75,8 +79,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameET"
-        app:shapeAppearance="?attr/shapeAppearanceLargeComponent">
+        app:layout_constraintTop_toBottomOf="@+id/nameP1ET"
+        app:shapeAppearance="?attr/shapeAppearanceLargeComponent"
+        app:prefixText="+57 "
+        app:prefixTextColor="@color/orange">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/phoneTI"
@@ -85,12 +91,13 @@
             android:fontFamily="@font/roboto"
             android:textColor="@color/black"
             android:textCursorDrawable="@drawable/orange_cursor"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:maxLength="10"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/numberApartmentET"
+        android:id="@+id/numberApartmentP1ET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
@@ -110,8 +117,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/phoneET"
-        app:shapeAppearance="?attr/shapeAppearanceLargeComponent">
+        app:layout_constraintTop_toBottomOf="@+id/phoneP1ET"
+        app:shapeAppearance="?attr/shapeAppearanceLargeComponent"
+        app:errorEnabled="true"
+        app:errorIconDrawable="@drawable/warning_icon"
+        app:errorIconTint="@color/design_default_color_error">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/numberApartmentTI"
@@ -119,12 +129,13 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto"
             android:textColor="@color/black"
-            android:textCursorDrawable="@drawable/orange_cursor"/>
+            android:textCursorDrawable="@drawable/orange_cursor"
+            android:maxLength="4"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/ageET"
+        android:id="@+id/ageP1ET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
@@ -144,7 +155,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/numberApartmentET"
+        app:layout_constraintTop_toBottomOf="@+id/numberApartmentP1ET"
         app:shapeAppearance="?attr/shapeAppearanceLargeComponent">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -154,7 +165,8 @@
             android:fontFamily="@font/roboto"
             android:textColor="@color/black"
             android:textCursorDrawable="@drawable/orange_cursor"
-            android:inputType="number"/>
+            android:inputType="number"
+            android:maxLength="3"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
