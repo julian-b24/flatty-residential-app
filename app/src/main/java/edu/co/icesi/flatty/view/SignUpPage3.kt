@@ -1,22 +1,44 @@
 package edu.co.icesi.flatty.view
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 import edu.co.icesi.flatty.databinding.SignUpPage3Binding
-import edu.co.icesi.flatty.models.Resident
+import edu.co.icesi.flatty.viewModel.SignUpPageViewModel
+import edu.co.icesi.flatty.viewModel.AuthResult
 import java.util.*
 
-class SignUpPage3 : AppCompatActivity() {
+class SignUpPage3 : AppCompatActivity(){
     private lateinit var binding: SignUpPage3Binding
+    private val viewmodel: SignUpPageViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = SignUpPage3Binding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        viewmodel.authState.observe(this){
+            when(it.result){
+                AuthResult.IDLE-> {
+                    //Log.e(">>>", "Entro este hpta")
+                    Toast.makeText(this, "Registrado con éxito", Toast.LENGTH_LONG).show()
+                    startActivity(Intent(this@SignUpPage3, LoginPageResident::class.java))
+
+                }
+                AuthResult.SUCCESS -> {
+                    Toast.makeText(this, it.message, Toast.LENGTH_LONG)
+
+                }
+                AuthResult.FAIL -> {
+                    Toast.makeText(this, "Registrado con éxito", Toast.LENGTH_LONG)
+
+                }
+            }
+        }
 
         val name = intent.extras?.getString("name")
         val phone = intent.extras?.getString("phone")
@@ -40,6 +62,7 @@ class SignUpPage3 : AppCompatActivity() {
         binding.validatePage3Btn.setOnClickListener {
             var sentCode = getCodeSent()
             if(sentCode == code){
+                viewmodel.createAccount(name!!, phone!!, numberApartment!!, age!!, email!!, password!!)
                 Toast.makeText(this, "Cuenta creada correctamente", Toast.LENGTH_LONG).show()
                 finish()
             }else{
@@ -66,16 +89,5 @@ class SignUpPage3 : AppCompatActivity() {
         receivedCode += binding.verifyCode4TI.text.toString()
 
         return receivedCode
-    }
-
-    private fun createAccount(name:String, phone:String, numberApartment:String, age:String, email:String, password:String){
-        Firebase.auth.createUserWithEmailAndPassword(
-            email, password
-        ).addOnSuccessListener {
-            val id = Firebase.auth.currentUser?.uid
-
-            var resident = Resident(id!!,name, phone, numberApartment,age, email)
-            //Firebase.firestore.collection().document(id).set(resident)
-        }
     }
 }
