@@ -6,6 +6,8 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import edu.co.icesi.flatty.databinding.SignUpPage3Binding
 import edu.co.icesi.flatty.viewModel.SignUpPageViewModel
 import edu.co.icesi.flatty.viewModel.AuthResult
@@ -24,18 +26,16 @@ class SignUpPage3 : AppCompatActivity(){
         viewmodel.authState.observe(this){
             when(it.result){
                 AuthResult.IDLE-> {
-                    //Log.e(">>>", "Entro este hpta")
-                    Toast.makeText(this, "Registrado con éxito", Toast.LENGTH_LONG).show()
-                    startActivity(Intent(this@SignUpPage3, LoginPageResident::class.java))
-
+                    Log.e(">>>", "Entro a IDLE")
                 }
                 AuthResult.SUCCESS -> {
-                    Toast.makeText(this, it.message, Toast.LENGTH_LONG)
-
+                    Log.e(">>>", "Entro a SUCCESS")
+                    Toast.makeText(this, "Registrado con éxito", Toast.LENGTH_LONG).show()
+                    startActivity(Intent(this@SignUpPage3, LoginPageResident::class.java))
                 }
                 AuthResult.FAIL -> {
-                    Toast.makeText(this, "Registrado con éxito", Toast.LENGTH_LONG)
-
+                    Log.e(">>>", "Entro a FAIL")
+                    Toast.makeText(this, "Error al registrar", Toast.LENGTH_LONG)
                 }
             }
         }
