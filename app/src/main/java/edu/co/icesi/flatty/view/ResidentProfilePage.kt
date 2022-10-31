@@ -1,8 +1,12 @@
 package edu.co.icesi.flatty.view
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.google.gson.Gson
 import edu.co.icesi.flatty.QuejasFragment
 import edu.co.icesi.flatty.R
@@ -20,11 +24,22 @@ class ResidentProfilePage : AppCompatActivity() {
     private lateinit var quejasFragment: QuejasFragment
     private lateinit var residentProfileFragment: ResidentProfileFragment
     private lateinit var chatResidentFragment: ChatResidentFragment
+    private lateinit var resident: Resident
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         val view = binding.root
         setContentView(view)
+
+        val resident = loadResident()
+        if(resident == null || Firebase.auth.currentUser == null ||Firebase.auth.currentUser?.isEmailVerified == false){
+            startActivity(Intent(this, LoginPageResident::class.java))
+            finish()
+            return
+        }else{
+            this.resident = resident
+            Toast.makeText(this, "Bienvenido ${resident.name}", Toast.LENGTH_LONG)
+        }
 
         quejasFragment = QuejasFragment.newInstance()
         residentProfileFragment = ResidentProfileFragment.newInstance()
@@ -56,5 +71,14 @@ class ResidentProfilePage : AppCompatActivity() {
         }else{
             return Gson().fromJson(json, Resident::class.java)
         }
+    }
+
+    fun logout(){
+        finish()
+        startActivity(Intent(this,LoginPageResident::class.java))
+        //Firebase.messaging.unsubscribeFromTopic(resident.id)
+        val sp = getSharedPreferences("appmoviles", MODE_PRIVATE)
+        sp.edit().clear().apply()
+        Firebase.auth.signOut()
     }
 }

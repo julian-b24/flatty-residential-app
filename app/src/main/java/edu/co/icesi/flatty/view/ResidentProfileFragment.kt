@@ -1,5 +1,6 @@
 package edu.co.icesi.flatty.view
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,7 +8,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import com.google.gson.Gson
+import edu.co.icesi.flatty.MainActivity
 import edu.co.icesi.flatty.R
 import edu.co.icesi.flatty.databinding.FragmentResidentProfileBinding
 import edu.co.icesi.flatty.model.Resident
@@ -46,7 +50,7 @@ class ResidentProfileFragment : Fragment() {
         }
 
         binding.logoutBtn.setOnClickListener{
-
+            //logout activity
         }
 
         return view
@@ -60,15 +64,5 @@ class ResidentProfileFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    fun loadResident(): Resident?{
-        val sp = getSharedPreferences("appmoviles", AppCompatActivity.MODE_PRIVATE)
-        val json = sp.getString("user", "NO_USER")
-        if(json == "NO_USER"){
-            return null
-        }else{
-            return Gson().fromJson(json, Resident::class.java)
-        }
     }
 }
