@@ -3,11 +3,13 @@ package edu.co.icesi.flatty.view
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.google.gson.Gson
 import edu.co.icesi.flatty.QuejasFragment
 import edu.co.icesi.flatty.R
 import edu.co.icesi.flatty.databinding.ActivityResidentProfilePageBinding
 import edu.co.icesi.flatty.databinding.ActivitySearchResidentBinding
 import edu.co.icesi.flatty.databinding.LoginPageResidentBinding
+import edu.co.icesi.flatty.model.Resident
 
 
 class ResidentProfilePage : AppCompatActivity() {
@@ -44,5 +46,15 @@ class ResidentProfilePage : AppCompatActivity() {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.residentFragmentContainer,fragment)
         transaction.commit()
+    }
+
+    fun loadResident(): Resident?{
+        val sp = getSharedPreferences("appmoviles", MODE_PRIVATE)
+        val json = sp.getString("user", "NO_USER")
+        if(json == "NO_USER"){
+            return null
+        }else{
+            return Gson().fromJson(json, Resident::class.java)
+        }
     }
 }

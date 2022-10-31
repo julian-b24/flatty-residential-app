@@ -6,11 +6,9 @@ import android.util.Log
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.auth.ktx.auth
-import com.google.firebase.ktx.Firebase
 import edu.co.icesi.flatty.databinding.SignUpPage3Binding
-import edu.co.icesi.flatty.viewModel.SignUpPageViewModel
 import edu.co.icesi.flatty.viewModel.AuthResult
+import edu.co.icesi.flatty.viewModel.SignUpPageViewModel
 import java.util.*
 
 class SignUpPage3 : AppCompatActivity(){

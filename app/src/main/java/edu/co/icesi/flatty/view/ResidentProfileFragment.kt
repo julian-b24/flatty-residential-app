@@ -7,8 +7,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.google.gson.Gson
 import edu.co.icesi.flatty.R
 import edu.co.icesi.flatty.databinding.FragmentResidentProfileBinding
+import edu.co.icesi.flatty.model.Resident
+import edu.co.icesi.flatty.viewModel.AuthResult
+import edu.co.icesi.flatty.viewModel.AuthState
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 
 class ResidentProfileFragment : Fragment() {
 
@@ -39,6 +45,10 @@ class ResidentProfileFragment : Fragment() {
             startActivity(Intent(binding.root.context,LoginPageResident::class.java))
         }
 
+        binding.logoutBtn.setOnClickListener{
+
+        }
+
         return view
     }
 
@@ -52,5 +62,13 @@ class ResidentProfileFragment : Fragment() {
         _binding = null
     }
 
-
+    fun loadResident(): Resident?{
+        val sp = getSharedPreferences("appmoviles", AppCompatActivity.MODE_PRIVATE)
+        val json = sp.getString("user", "NO_USER")
+        if(json == "NO_USER"){
+            return null
+        }else{
+            return Gson().fromJson(json, Resident::class.java)
+        }
+    }
 }
