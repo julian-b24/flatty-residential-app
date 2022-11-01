@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.android.material.button.MaterialButton
@@ -17,15 +18,39 @@ import edu.co.icesi.flatty.R
 import edu.co.icesi.flatty.databinding.LoginPageResidentBinding
 import edu.co.icesi.flatty.model.Guard
 import edu.co.icesi.flatty.model.Resident
+import edu.co.icesi.flatty.viewModel.LoginPageViewModel
+import edu.co.icesi.flatty.viewModel.UserType
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.tasks.await
+import kotlinx.coroutines.withContext
 
 class LoginPageResident : AppCompatActivity() {
     private lateinit var binding: LoginPageResidentBinding
+    private val viewModel: LoginPageViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = LoginPageResidentBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        viewModel.loggedUserType.observe(this){
+            when(it.userType){
+                UserType.RESIDENT -> {
+                    Log.e(">>>", "IN A")
+                    startActivity(Intent(this, ResidentProfilePage::class.java))
+                    finish()
+                }
+                UserType.GUARD -> {
+                    Log.e(">>>", "IN B")
+                    startActivity(Intent(this, SearchResident::class.java))
+                    finish()
+                }
+                UserType.NONE -> {
+                    Log.e(">>>", "IN C")
+                }
+            }
+        }
 
         var selectedResident = true
 
@@ -52,6 +77,34 @@ class LoginPageResident : AppCompatActivity() {
         binding.loginBtn.setOnClickListener {
             val email = binding.emailTI.text.toString()
             val password = binding.passwordTI.text.toString()
+            val loggedUserType = viewModel.loginUser(email, password, selectedResident)
+
+            if(loggedUserType == UserType.GUARD){
+                Log.e(">>>", "Portero")
+                startActivity(Intent(this, SearchResident::class.java))
+                //finish()
+            }else if(loggedUserType == UserType.RESIDENT){
+                Log.e(">>>", "Residente")
+                startActivity(Intent(this, ResidentProfilePage::class.java))
+                //finish()
+            }else{
+                Log.e(">>>", "Fallo")
+            }
+
+            /*
+            Firebase.auth.signInWithEmailAndPassword(email, password).await()
+            if(!selectedResident) {
+                val fbguard = Firebase.auth.currentUser
+                Firebase.firestore.collection("guards").document(fbguard.uid).get().addOnSuccessListener {
+                    val guard = it.toObject(Guard::class.java)
+
+                    //2.Salvar el usuario
+                    saveGuard(guard!!)
+                    startActivity(Intent(this, SearchResident::class.java))
+                    finish()
+                }
+            }
+
 
             Firebase.auth.signInWithEmailAndPassword(email, password).addOnSuccessListener {
                 if (!selectedResident) {
@@ -59,37 +112,30 @@ class LoginPageResident : AppCompatActivity() {
                     if (fbguard!!.isEmailVerified) {
                         //Dar acceso
                         //1.Obtener usuario almacenado en firestore
-                        Firebase.firestore.collection("guards").document(fbguard.uid).get().addOnSuccessListener {
-                            val guard = it.toObject(Guard::class.java)
+                        Firebase.firestore.collection("guards").document(fbguard.uid).get()
+                            .addOnSuccessListener {
+                                val guard = it.toObject(Guard::class.java)
 
-                            //2.Salvar el usuario
-                            saveGuard(guard!!)
-                            startActivity(Intent(this, SearchResident::class.java))
-                            finish()
-                        }
+                                //2.Salvar el usuario
+                                saveGuard(guard!!)
+                                startActivity(Intent(this, SearchResident::class.java))
+                                finish()
+                            }
                     } else {
                         Toast.makeText(this, "Su email no esta verificado", Toast.LENGTH_LONG)
                     }
-                }else{
+                } else {
                     val fbresident = Firebase.auth.currentUser
-                    if (fbresident!!.isEmailVerified) {
-                        //Dar acceso
-                        //1.Obtener usuario almacenado en firestore
-                        Firebase.firestore.collection("residents").document(fbresident.uid).get().addOnSuccessListener {
-                            val resident = it.toObject(Resident::class.java)
+                    val resident =
+                        Firebase.firestore.collection("residents").document(fbresident!!.uid).get()
+                    //2.Salvar el usuario
+                    saveResident(resident!!)
+                    startActivity(Intent(this, ResidentProfilePage::class.java))
+                    finish()
 
-                            //2.Salvar el usuario
-                            saveResident(resident!!)
-                            startActivity(Intent(this,ResidentProfilePage::class.java))
-                            finish()
-                        }
-                    } else {
-                        Toast.makeText(this, "Su email no esta verificado", Toast.LENGTH_LONG)
-                    }
                 }
-            }.addOnFailureListener {
-                Toast.makeText(this, it.message, Toast.LENGTH_LONG)
             }
+             */
         }
     }
 
@@ -104,18 +150,18 @@ class LoginPageResident : AppCompatActivity() {
         )
     }
 
-    private fun restarTextFields() {
+    fun restarTextFields() {
         binding.emailTI.setText("")
         binding.passwordTI.setText("")
     }
 
-    fun saveResident(resident:Resident){
+    fun saveResident(resident: Resident) {
         val sp = getSharedPreferences("appmoviles", MODE_PRIVATE)
         val json = Gson().toJson(resident)
         sp.edit().putString("resident", json).apply()
     }
 
-    fun saveGuard(guard: Guard){
+    fun saveGuard(guard: Guard) {
         val sp = getSharedPreferences("appmoviles", MODE_PRIVATE)
         val json = Gson().toJson(guard)
         sp.edit().putString("guard", json).apply()

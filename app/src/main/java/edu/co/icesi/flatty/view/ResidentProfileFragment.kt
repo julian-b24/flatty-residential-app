@@ -50,7 +50,7 @@ class ResidentProfileFragment : Fragment() {
         }
 
         binding.logoutBtn.setOnClickListener{
-            //logout activity
+            activity?.finish()
         }
 
         return view

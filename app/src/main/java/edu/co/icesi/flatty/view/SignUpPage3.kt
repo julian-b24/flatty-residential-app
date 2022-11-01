@@ -62,7 +62,7 @@ class SignUpPage3 : AppCompatActivity(){
             if(sentCode == code){
                 viewmodel.createAccount(name!!, phone!!, numberApartment!!, age!!, email!!, password!!)
                 Toast.makeText(this, "Cuenta creada correctamente", Toast.LENGTH_LONG).show()
-                finish()
+                //finish()
             }else{
                 Toast.makeText(this, "Codigo incorrecto", Toast.LENGTH_SHORT).show()
             }

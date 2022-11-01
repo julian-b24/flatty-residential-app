@@ -24,16 +24,18 @@ class SignUpPageViewModel : ViewModel(){
     fun createAccount(name:String, phone:String, numberApartment:String, age:String, email:String, password:String){
         viewModelScope.launch (Dispatchers.IO){
             try {
-                val result = Firebase.auth.createUserWithEmailAndPassword(email, password
-                ).addOnSuccessListener {
-                    val resident = Resident(Firebase.auth.currentUser!!.uid ,name,  phone, numberApartment, age, email, password)
-                    Firebase.firestore.collection("residents").document(resident.id).set(resident)
-                        .addOnSuccessListener{
-                            sendVerificationEmail()
-                        }
-                }.addOnFailureListener {
-                    //mensaje de error
-                }.await()
+                val result = Firebase.auth.createUserWithEmailAndPassword(email, password).await()
+                val resident = Resident(Firebase.auth.currentUser!!.uid ,name,  phone, numberApartment, age, email, password)
+                Firebase.firestore.collection("residents").document(resident.id).set(resident).addOnCompleteListener {
+                    if(it.isSuccessful){
+                        it.result;
+                        Log.e(">>>","Exito")
+                    }else{
+                        val alfa = it.exception
+                        Log.e(">>>", alfa!!.localizedMessage)
+
+                    }
+                }
 
                 withContext(Dispatchers.Main){
                     _authState.value = AuthState(AuthResult.SUCCESS, "Success")
@@ -41,9 +43,11 @@ class SignUpPageViewModel : ViewModel(){
 
             }catch (ex:Exception){
                 Log.e(">>>",ex.localizedMessage)
-                _authState.value = AuthState(
-                    AuthResult.FAIL, ex.localizedMessage
-                )
+                withContext(Dispatchers.Main) {
+                    _authState.value = AuthState(
+                        AuthResult.FAIL, ex.localizedMessage
+                    )
+                }
             }
         }
     }
