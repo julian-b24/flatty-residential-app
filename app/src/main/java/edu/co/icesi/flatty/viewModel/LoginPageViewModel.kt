@@ -20,9 +20,7 @@ class LoginPageViewModel: ViewModel() {
     )
     val loggedUserType: LiveData<LoggedUser> get() = _loggedUserType
 
-    fun loginUser(email: String, password: String, selectedResident: Boolean): UserType{
-
-        var loggedUserType: UserType = UserType.NONE
+    fun loginUser(email: String, password: String, selectedResident: Boolean){
 
         viewModelScope.launch(Dispatchers.IO) {
             Firebase.auth.signInWithEmailAndPassword(email, password).await()
@@ -43,9 +41,9 @@ class LoginPageViewModel: ViewModel() {
             }else{
                 val fbresident = Firebase.auth.currentUser
                 //val resident =
-                Log.e(">>>","Antes")
+                //Log.e(">>>","Antes")
                 Firebase.firestore.collection("residents").document(fbresident!!.uid).get().await()
-                Log.e(">>>","Después")
+                //Log.e(">>>","Después")
                 //2.Salvar el usuario
                 //saveResident(resident!!)
                 //startActivity(Intent(this, ResidentProfilePage::class.java))
@@ -55,8 +53,6 @@ class LoginPageViewModel: ViewModel() {
                 }
             }
         }
-
-        return loggedUserType
     }
 
     /*

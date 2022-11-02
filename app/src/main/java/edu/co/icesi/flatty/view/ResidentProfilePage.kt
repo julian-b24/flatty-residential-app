@@ -32,13 +32,13 @@ class ResidentProfilePage : AppCompatActivity() {
         setContentView(view)
 
         val resident = loadResident()
-        if(resident == null || Firebase.auth.currentUser == null ||Firebase.auth.currentUser?.isEmailVerified == false){
+        if(Firebase.auth.currentUser == null){
             startActivity(Intent(this, LoginPageResident::class.java))
             finish()
             return
         }else{
-            this.resident = resident
-            Toast.makeText(this, "Bienvenido ${resident.name}", Toast.LENGTH_LONG)
+            //this.resident = resident
+            Toast.makeText(this, "Bienvenido", Toast.LENGTH_LONG)
         }
 
         quejasFragment = QuejasFragment.newInstance()

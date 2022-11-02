@@ -39,12 +39,12 @@ class LoginPageResident : AppCompatActivity() {
                 UserType.RESIDENT -> {
                     Log.e(">>>", "IN A")
                     startActivity(Intent(this, ResidentProfilePage::class.java))
-                    finish()
+                    //finish()
                 }
                 UserType.GUARD -> {
                     Log.e(">>>", "IN B")
                     startActivity(Intent(this, SearchResident::class.java))
-                    finish()
+                    //finish()
                 }
                 UserType.NONE -> {
                     Log.e(">>>", "IN C")
@@ -77,20 +77,7 @@ class LoginPageResident : AppCompatActivity() {
         binding.loginBtn.setOnClickListener {
             val email = binding.emailTI.text.toString()
             val password = binding.passwordTI.text.toString()
-            val loggedUserType = viewModel.loginUser(email, password, selectedResident)
-
-            if(loggedUserType == UserType.GUARD){
-                Log.e(">>>", "Portero")
-                startActivity(Intent(this, SearchResident::class.java))
-                //finish()
-            }else if(loggedUserType == UserType.RESIDENT){
-                Log.e(">>>", "Residente")
-                startActivity(Intent(this, ResidentProfilePage::class.java))
-                //finish()
-            }else{
-                Log.e(">>>", "Fallo")
-            }
-
+            viewModel.loginUser(email, password, selectedResident)
             /*
             Firebase.auth.signInWithEmailAndPassword(email, password).await()
             if(!selectedResident) {
