@@ -1,6 +1,5 @@
 package edu.co.icesi.flatty.viewModel
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -26,28 +25,14 @@ class LoginPageViewModel: ViewModel() {
             Firebase.auth.signInWithEmailAndPassword(email, password).await()
             if(!selectedResident) {
                 val fbguard = Firebase.auth.currentUser
-                Firebase.firestore.collection("guards").document(fbguard!!.uid).get().await()//addOnSuccessListener {
-                    //val guard = it.toObject(Guard::class.java)
-
-                    //2.Salvar el usuario
-                    //saveGuard(guard!!)
-                    //startActivity(Intent(this, SearchResident::class.java))
-                    //finish()
-                //}
+                Firebase.firestore.collection("guards").document(fbguard!!.uid).get().await()
                 withContext(Dispatchers.Main){
                     _loggedUserType.value = LoggedUser(UserType.GUARD)
                 }
 
             }else{
                 val fbresident = Firebase.auth.currentUser
-                //val resident =
-                //Log.e(">>>","Antes")
                 Firebase.firestore.collection("residents").document(fbresident!!.uid).get().await()
-                //Log.e(">>>","Después")
-                //2.Salvar el usuario
-                //saveResident(resident!!)
-                //startActivity(Intent(this, ResidentProfilePage::class.java))
-                //finish()
                 withContext(Dispatchers.Main){
                     _loggedUserType.value = LoggedUser(UserType.RESIDENT)
                 }
@@ -55,19 +40,6 @@ class LoginPageViewModel: ViewModel() {
         }
     }
 
-    /*
-    fun saveResident(resident: Resident){
-        val sp = getSharedPreferences("appmoviles", AppCompatActivity.MODE_PRIVATE)
-        val json = Gson().toJson(resident)
-        sp.edit().putString("resident", json).apply()
-    }
-
-    fun saveGuard(guard: Guard){
-        val sp = getSharedPreferences("appmoviles", AppCompatActivity.MODE_PRIVATE)
-        val json = Gson().toJson(guard)
-        sp.edit().putString("guard", json).apply()
-    }
-    */
 }
 
 data class LoggedUser(val userType: UserType)
