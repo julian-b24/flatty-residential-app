@@ -18,11 +18,11 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="308dp"
+            android:layout_width="0dp"
             android:layout_height="60dp"
-            android:layout_marginStart="24dp"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="105dp"
-            android:layout_marginEnd="24dp"
+            android:layout_marginEnd="53dp"
             android:hint="No. de apto"
             android:textColorHint="@color/greyA5A5A5"
             app:boxStrokeColor="@color/orange_Flatty"
@@ -32,12 +32,17 @@
             app:hintTextColor="@color/greyA5A5A5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent"
+            app:boxCornerRadiusBottomEnd="8dp"
+            app:boxCornerRadiusTopEnd="8dp"
+            app:boxCornerRadiusBottomStart="8dp"
+            app:boxCornerRadiusTopStart="8dp">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/txtInputSearchApartment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background="@color/white"
                 android:textColor="@color/black"
                 android:textColorHighlight="@color/orangebtnphone"
                 android:textColorLink="@color/orange_Flatty"
@@ -51,8 +56,8 @@
             android:id="@+id/labelBuscar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
-            android:layout_marginTop="39dp"
+            android:layout_marginStart="52dp"
+            android:layout_marginTop="48dp"
             android:lineSpacingExtra="8sp"
             android:shadowColor="@color/black_name"
             android:text="Buscar"
@@ -65,11 +70,11 @@
 
         <ImageButton
             android:id="@+id/btnBackLogOut"
-            android:layout_width="16dp"
-            android:layout_height="16dp"
-            android:layout_marginTop="25dp"
-            android:layout_marginEnd="28dp"
-            android:background="@android:color/transparent"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/transparent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_login"
@@ -77,12 +82,11 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/apartmentNumberLabel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="141dp"
-        android:layout_marginTop="19dp"
-        android:text="301 G"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:textColor="#272727"
         android:textSize="30sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -92,23 +96,12 @@
         android:id="@+id/Label1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="75dp"
+        android:layout_marginStart="24dp"
         android:layout_marginTop="20dp"
-        android:text="Hemos encontrado "
+        android:text="Numero residentes :"
         android:textColor="#998B8B8B"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-    <TextView
-        android:id="@+id/labelNumeroResidentes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp"
-        android:text="3"
-        android:textColor="#272727"
-        app:layout_constraintStart_toEndOf="@+id/Label1"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/apartmentNumberLabel" />
 
     <TextView
         android:id="@+id/labelNumeroResidentes2"
@@ -118,15 +111,15 @@
         android:layout_marginTop="20dp"
         android:text="residente(s)"
         android:textColor="#272727"
-        app:layout_constraintStart_toEndOf="@+id/labelNumeroResidentes"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintStart_toEndOf="@+id/Label1"
+        app:layout_constraintTop_toBottomOf="@+id/apartmentNumberLabel" />
 
     <TextView
         android:id="@+id/labelResultados"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="35dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         android:text="Resultados"
         android:textColor="#272727"
         android:textSize="18sp"
@@ -135,13 +128,11 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/ResidentesRecycler"
-        android:layout_width="0dp"
-        android:layout_height="386dp"
+        android:layout_width="350dp"
+        android:layout_height="330dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="24dp"
-        android:layout_marginBottom="32dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/labelResultados" />

@@ -7,41 +7,17 @@
     android:background="@color/white"
     tools:context=".view.FavouritesPages">
 
-    <Button
-        android:id="@+id/btnBackToSearchedPage"
-        android:layout_width="90dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@android:color/transparent"
-        android:paddingLeft="2dp"
-        android:paddingTop="2dp"
-        android:paddingEnd="2dp"
-        android:paddingBottom="2dp"
-        android:text="Favoritos"
-        android:textColor="@color/orange_Flatty"
-        android:textSize="14dp"
-        app:icon="@drawable/ic_back_icon"
-        app:iconPadding="0dp"
-        app:iconTint="@color/orange_Flatty"
-        app:iconTintMode="src_atop"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:context="ProfileSearchedPage"
-        tools:ignore="TouchTargetSizeCheck,TouchTargetSizeCheck" />
-
     <TextView
         android:id="@+id/nameResidentTV"
         android:layout_width="244dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="29dp"
-        android:layout_marginTop="22dp"
         android:text=" Miriam Londoño"
         android:textAlignment="viewStart"
         android:textColor="@color/black_name"
         android:textSize="21sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnBackToSearchedPage" />
+        tools:layout_editor_absoluteY="54dp" />
 
     <TextView
         android:id="@+id/textView2"
@@ -104,6 +80,29 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
+    <ImageButton
+        android:id="@+id/btnBackToSearchedPage"
+        android:layout_width="30dp"
+        android:layout_height="19dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/transparent"
+        android:paddingRight="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back_icon" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="16dp"
+        android:text="Favoritos"
+        android:textColor="@color/orange_Flatty"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
