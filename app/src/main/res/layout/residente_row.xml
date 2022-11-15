@@ -7,7 +7,7 @@
     android:background="#00FFFFFF">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="409dp"
+        android:layout_width="350dp"
         android:layout_height="90dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -15,7 +15,7 @@
 
         <ImageView
             android:id="@+id/imvResidentPhoto"
-            android:layout_width="67dp"
+            android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -28,9 +28,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="TextView"
+            android:layout_marginTop="15dp"
+            android:text="Name resident"
+            android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@+id/imvResidentPhoto"
-            app:layout_constraintTop_toTopOf="@+id/imvResidentPhoto" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/txtResidentPhone"
@@ -38,7 +40,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:text="TextView"
+            android:text="Phone number"
+            android:textColor="@color/black"
             app:layout_constraintStart_toEndOf="@+id/imvResidentPhoto"
             app:layout_constraintTop_toBottomOf="@+id/txtResidentName" />
 
@@ -47,7 +50,12 @@
             style="@style/Widget.AppCompat.Button.Small"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
             android:background="#00FFFFFF"
+            android:paddingLeft="0dp"
+            android:paddingTop="0dp"
+            android:paddingRight="0dp"
+            android:paddingBottom="0dp"
             app:icon="@drawable/go_to"
             app:iconTint="#000000"
             app:layout_constraintBottom_toBottomOf="parent"

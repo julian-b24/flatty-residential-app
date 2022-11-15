@@ -27,6 +27,7 @@ class SearchResidentFragment : Fragment() {
     // Lógica Residentes
     private lateinit var adapter : ResidentesAdapter
     private lateinit var layoutManager: LinearLayoutManager
+    var residentString : String = "residente(s)"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,9 +47,8 @@ class SearchResidentFragment : Fragment() {
         binding.ResidentesRecycler.setHasFixedSize(true)
         adapter = ResidentesAdapter()
         binding.ResidentesRecycler.adapter = adapter
-
         binding.txtInputSearchApartment.addTextChangedListener {
-            var apartment = binding.txtInputSearchApartment.text.toString()
+            var apartment = binding.txtInputSearchApartment.text.toString().uppercase()
             Log.e(">>>", "Apartment to search in Firebase: " + apartment)
             val query = Firebase.firestore.collection("residents").whereEqualTo("numberApartment", apartment)
             query.get().addOnCompleteListener {
@@ -60,12 +60,14 @@ class SearchResidentFragment : Fragment() {
                         val resident = resident.toObject(Resident::class.java)
                         adapter.addResident(resident)
                     }
+                    binding.apartmentNumberLabel.text = apartment
                     adapter.notifyDataSetChanged()
-                    binding.labelNumeroResidentes.text = adapter.itemCount.toString()
+                    binding.labelNumeroResidentes2.text = adapter.itemCount.toString()+" "+residentString
                 }
                 else
                 {
-                    binding.labelNumeroResidentes.text = "0"
+                    binding.apartmentNumberLabel.text = "No se encontro el apartamento "+apartment
+                    binding.labelNumeroResidentes2.text = "0 "+residentString
                 }
             }
         }
