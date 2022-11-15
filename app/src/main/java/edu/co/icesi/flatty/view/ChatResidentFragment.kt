@@ -1,30 +1,37 @@
 package edu.co.icesi.flatty.view
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.LifecycleCoroutineScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import edu.co.icesi.flatty.databinding.FragmentChatResidentBinding
 import edu.co.icesi.flatty.gioMessages.Mensaje
 import edu.co.icesi.flatty.gioMessages.MensajesAdapter
 import edu.co.icesi.flatty.gioMessages.TypeShows
+import kotlinx.coroutines.tasks.await
 
 class ChatResidentFragment : Fragment() {
+
+    private var userId = Firebase.auth.currentUser?.uid
+    private val guardId = "ZVzV35a1W6htTBxh1DIm"
 
     private var _binding: FragmentChatResidentBinding? = null
     private val binding get() = _binding!!
     private lateinit var layoutManager: LinearLayoutManager
-    private lateinit var adapter : MensajesAdapter
+    private lateinit var adapter: MensajesAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
 
         _binding = FragmentChatResidentBinding.inflate(inflater, container, false)
@@ -43,6 +50,16 @@ class ChatResidentFragment : Fragment() {
         }
 
         return view
+    }
+
+    fun subcribeToMessage() {
+        val result = userId?.let {
+            Firebase.firestore.collection("chats")
+                .document(guardId).collection("rooms")
+                .whereEqualTo("friendId", userId).get().await()
+
+
+        }
     }
 
     companion object {
