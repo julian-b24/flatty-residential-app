@@ -57,14 +57,14 @@ class FavouritesPages : AppCompatActivity() {
                 .get()
                 .await()
 
-            val result_vehicles = Firebase.firestore
+            val resultVehicles = Firebase.firestore
                 .collection("residents")
                 .document(residentId)
                 .collection("vehicles")
                 .get()
                 .await()
 
-            val result_persons = Firebase.firestore
+            val resultPersons = Firebase.firestore
                 .collection("residents")
                 .document(residentId)
                 .collection("persons")
@@ -75,13 +75,13 @@ class FavouritesPages : AppCompatActivity() {
             resident = result.toObject(Resident::class.java)!!
 
             var vehicles = arrayListOf<FavouriteVehicle>()
-            for (doc in result_vehicles){
+            for (doc in resultVehicles){
                 val vehicle = doc.toObject(FavouriteVehicle::class.java)
                 vehicles.add(vehicle)
             }
 
             var persons = arrayListOf<FavouritePerson>()
-            for (doc in result_persons){
+            for (doc in resultPersons){
                 val person = doc.toObject(FavouritePerson::class.java)
                 persons.add(person)
             }

@@ -40,7 +40,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/labelPhoneNumber"
+            android:id="@+id/PhoneNumberTV"
             android:layout_width="wrap_content"
             android:layout_height="24dp"
             android:layout_marginTop="10dp"
@@ -52,7 +52,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/labelApartamentNumber"
+            android:id="@+id/ApartamentNumberTV"
             android:layout_width="wrap_content"
             android:layout_height="24dp"
             android:layout_marginTop="15dp"
@@ -61,7 +61,7 @@
             android:textColor="@color/grey_flatty2"
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/labelPhoneNumber" />
+            app:layout_constraintTop_toBottomOf="@+id/PhoneNumberTV" />
 
         <TextView
             android:id="@+id/labelApto"
@@ -130,7 +130,7 @@
             app:layout_constraintTop_toBottomOf="@+id/labelTorre" />
 
         <TextView
-            android:id="@+id/textView13"
+            android:id="@+id/ApartmentTowerTV"
             android:layout_width="wrap_content"
             android:layout_height="24dp"
             android:layout_marginTop="15dp"
@@ -139,10 +139,10 @@
             android:textColor="@color/grey_flatty2"
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/labelApartamentNumber" />
+            app:layout_constraintTop_toBottomOf="@+id/ApartamentNumberTV" />
 
         <TextView
-            android:id="@+id/textView14"
+            android:id="@+id/ageTV"
             android:layout_width="wrap_content"
             android:layout_height="24dp"
             android:layout_marginTop="15dp"
@@ -151,7 +151,7 @@
             android:textColor="@color/grey_flatty2"
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView13" />
+            app:layout_constraintTop_toBottomOf="@+id/ApartmentTowerTV" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -163,14 +163,14 @@
         android:layout_marginTop="27dp"
         android:layout_marginEnd="171dp"
         android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toTopOf="@+id/nameResident"
+        app:layout_constraintBottom_toTopOf="@+id/nameSearchedResidentTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/image_61" />
 
     <TextView
-        android:id="@+id/nameResident"
+        android:id="@+id/nameSearchedResidentTV"
         android:layout_width="244dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="83dp"
@@ -180,13 +180,13 @@
         android:textAlignment="center"
         android:textColor="@color/black_name"
         android:textSize="21sp"
-        app:layout_constraintBottom_toTopOf="@+id/emailResident"
+        app:layout_constraintBottom_toTopOf="@+id/emailSearchedResidentTV"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <TextView
-        android:id="@+id/emailResident"
+        android:id="@+id/emailSearchedResidentTV"
         android:layout_width="210dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="99dp"
@@ -198,7 +198,7 @@
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameResident" />
+        app:layout_constraintTop_toBottomOf="@+id/nameSearchedResidentTV" />
 
     <ImageButton
         android:id="@+id/btnCall"
@@ -210,7 +210,7 @@
         android:background="@drawable/button_orange_shape"
         android:backgroundTint="@color/orangebtnphone"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailResident"
+        app:layout_constraintTop_toBottomOf="@+id/emailSearchedResidentTV"
         app:srcCompat="@drawable/ic_phone_orange"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck"
         tools:layout_constraintCircleRadius="10dp" />
@@ -223,7 +223,7 @@
         android:layout_marginEnd="113dp"
         android:background="@drawable/button_grey_shape"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/emailResident"
+        app:layout_constraintTop_toBottomOf="@+id/emailSearchedResidentTV"
         app:srcCompat="@drawable/ic_chat_grey"
         tools:ignore="SpeakableTextPresentCheck,SpeakableTextPresentCheck,TouchTargetSizeCheck,TouchTargetSizeCheck" />
 
@@ -264,7 +264,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.59"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameResident" />
+        app:layout_constraintTop_toBottomOf="@+id/nameSearchedResidentTV" />
 
     <TextView
         android:id="@+id/labelPreferencias"
