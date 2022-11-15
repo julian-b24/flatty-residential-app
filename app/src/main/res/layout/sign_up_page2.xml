@@ -134,7 +134,7 @@
         app:srcCompat="@drawable/icon_sign_up2" />
 
     <TextView
-        android:id="@+id/ApartmentTowerTV"
+        android:id="@+id/phoneResident"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
@@ -153,8 +153,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Ingresa un email y tu contraseña"
-        app:layout_constraintStart_toStartOf="@+id/ApartmentTowerTV"
-        app:layout_constraintTop_toBottomOf="@+id/ApartmentTowerTV" />
+        app:layout_constraintStart_toStartOf="@+id/phoneResident"
+        app:layout_constraintTop_toBottomOf="@+id/phoneResident" />
 
     <CheckBox
         android:theme="@style/CheckBoxColor"

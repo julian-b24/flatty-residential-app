@@ -181,7 +181,7 @@
         app:srcCompat="@drawable/icon_sign_up1" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/emailResidentTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
@@ -200,8 +200,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Añade tus datos para poder continuar"
-        app:layout_constraintStart_toStartOf="@+id/textView9"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintStart_toStartOf="@+id/emailResidentTV"
+        app:layout_constraintTop_toBottomOf="@+id/emailResidentTV" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/returnP1Constrain"

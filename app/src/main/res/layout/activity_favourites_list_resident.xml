@@ -40,7 +40,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
-        android:id="@+id/textView15"
+        android:id="@+id/aptoResident"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="27dp"
@@ -69,7 +69,7 @@
         app:layout_constraintTop_toBottomOf="@+id/backLYT" />
 
     <TextView
-        android:id="@+id/textView17"
+        android:id="@+id/towerResident"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="27dp"
@@ -102,9 +102,9 @@
         android:layout_marginEnd="32dp"
         android:background="@drawable/orange_square"
         android:src="@drawable/add_orange"
-        app:layout_constraintBottom_toBottomOf="@+id/textView17"
+        app:layout_constraintBottom_toBottomOf="@+id/towerResident"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView17"
+        app:layout_constraintTop_toTopOf="@+id/towerResident"
         tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -117,7 +117,7 @@
         android:paddingBottom="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView17" />
+        app:layout_constraintTop_toBottomOf="@+id/towerResident" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/vehiclesRV"

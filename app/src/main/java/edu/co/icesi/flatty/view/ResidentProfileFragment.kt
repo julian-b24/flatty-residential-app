@@ -8,7 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.lifecycleScope
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.gson.Gson
 import edu.co.icesi.flatty.MainActivity
@@ -18,15 +20,21 @@ import edu.co.icesi.flatty.model.Resident
 import edu.co.icesi.flatty.viewModel.AuthResult
 import edu.co.icesi.flatty.viewModel.AuthState
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
 
 class ResidentProfileFragment : Fragment() {
 
     private var _binding: FragmentResidentProfileBinding? = null
     private val binding get() = _binding!!
+    lateinit var residentId: String
+    lateinit var resident: Resident
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        residentId = Firebase.auth.currentUser!!.uid
+        getResident(residentId)
     }
 
     override fun onCreateView(
@@ -54,6 +62,31 @@ class ResidentProfileFragment : Fragment() {
         }
 
         return view
+    }
+    private fun getResident(residentId: String){
+        lifecycleScope.launch(Dispatchers.IO) {
+            val result = Firebase.firestore
+                .collection("residents")
+                .document(residentId)
+                .get()
+                .await()
+
+            resident = result.toObject(Resident::class.java)!!
+
+            val numberAparment = resident.numberApartment.slice(IntRange(0, 2))
+            val towerApartment = resident.numberApartment[3].toString()
+
+            withContext(Dispatchers.Main){
+                binding.residentNameTV.text = resident.name
+                binding.emailResidentTV.text = resident.email
+                binding.ageResident.text = resident.age
+                binding.phoneResident.text = resident.phone
+                binding.aptoResident.text = numberAparment
+                binding.towerResident.text = towerApartment
+
+            }
+
+        }
     }
 
     companion object {

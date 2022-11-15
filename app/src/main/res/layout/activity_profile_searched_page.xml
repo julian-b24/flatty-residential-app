@@ -130,7 +130,7 @@
             app:layout_constraintTop_toBottomOf="@+id/labelTorre" />
 
         <TextView
-            android:id="@+id/ApartmentTowerTV"
+            android:id="@+id/apartamentTowerTv"
             android:layout_width="wrap_content"
             android:layout_height="24dp"
             android:layout_marginTop="15dp"
@@ -151,7 +151,7 @@
             android:textColor="@color/grey_flatty2"
             android:textSize="15sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ApartmentTowerTV" />
+            app:layout_constraintTop_toBottomOf="@+id/apartamentTowerTv" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

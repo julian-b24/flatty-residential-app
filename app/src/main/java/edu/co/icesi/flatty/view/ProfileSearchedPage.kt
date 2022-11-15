@@ -63,7 +63,7 @@ class ProfileSearchedPage : AppCompatActivity() {
                 binding.ageTV.text = resident.age
                 binding.PhoneNumberTV.text = resident.phone
                 binding.ApartamentNumberTV.text = numberAparment
-                binding.ApartmentTowerTV.text = towerApartment
+                binding.apartamentTowerTv.text = towerApartment
 
             }
 
