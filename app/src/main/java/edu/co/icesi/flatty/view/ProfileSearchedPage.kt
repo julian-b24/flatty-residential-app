@@ -28,6 +28,7 @@ class ProfileSearchedPage : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
+        //residentId = intent.extras?.getString("residentId").toString()
         getResident(residentId)
 
         binding.btnBackToSearchResident.setOnClickListener {
@@ -40,7 +41,9 @@ class ProfileSearchedPage : AppCompatActivity() {
         }
 
         binding.favouritesLyt.setOnClickListener {
-            var intent = Intent(this, FavouritesPages::class.java)
+            var intent = Intent(this, FavouritesPages::class.java).apply {
+                putExtra("residentId", residentId)
+            }
             startActivity(intent)
         }
 

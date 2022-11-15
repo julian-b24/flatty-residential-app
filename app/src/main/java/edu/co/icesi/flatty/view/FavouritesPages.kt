@@ -24,7 +24,7 @@ import kotlinx.coroutines.withContext
 
 class FavouritesPages : AppCompatActivity() {
 
-    val residentId: String = "PzDvLwtTnDeswT5yOzo3"
+    lateinit var residentId: String
     lateinit var resident: Resident
 
     private val binding: ActivityFavouritesPagesBinding by lazy{
@@ -41,6 +41,7 @@ class FavouritesPages : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        residentId = intent.extras?.getString("residentId").toString()
         getResident(residentId)
 
         binding.btnBackToSearchedPage.setOnClickListener {
