@@ -52,6 +52,7 @@ class FavouritesPages : AppCompatActivity() {
 
     private fun getResident(residentId: String){
         lifecycleScope.launch(Dispatchers.IO) {
+            Log.e(">>>",residentId)
             val result = Firebase.firestore
                 .collection("residents")
                 .document(residentId)

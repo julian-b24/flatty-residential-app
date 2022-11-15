@@ -18,7 +18,7 @@ import kotlinx.coroutines.withContext
 
 class ProfileSearchedPage : AppCompatActivity() {
 
-    val residentId: String = "PzDvLwtTnDeswT5yOzo3"
+    private lateinit var residentId: String
     lateinit var resident: Resident
 
     private lateinit var binding: ActivityProfileSearchedPageBinding
@@ -28,16 +28,11 @@ class ProfileSearchedPage : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        //residentId = intent.extras?.getString("residentId").toString()
+        residentId = intent.extras?.getString("residentId").toString()
         getResident(residentId)
 
         binding.btnBackToSearchResident.setOnClickListener {
             finish()
-        }
-
-        binding.goToFavoritos.setOnClickListener{
-            var intent = Intent(this, FavouritesPages::class.java)
-            startActivity(intent)
         }
 
         binding.favouritesLyt.setOnClickListener {

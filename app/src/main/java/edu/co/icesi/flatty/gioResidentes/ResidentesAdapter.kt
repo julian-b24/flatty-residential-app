@@ -1,10 +1,14 @@
 package edu.co.icesi.flatty.gioResidentes
 
+import android.content.Intent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import edu.co.icesi.flatty.R
 import edu.co.icesi.flatty.model.Resident
+import edu.co.icesi.flatty.view.ProfileSearchedPage
 
 class ResidentesAdapter : RecyclerView.Adapter<ResidenteView>() {
 
@@ -30,6 +34,13 @@ class ResidentesAdapter : RecyclerView.Adapter<ResidenteView>() {
         val residente = residentes[position]
         holder.txtResidentName.text = residente.name
         holder.txtResidentPhone.text = residente.phone
+        Log.e(">>>", "View loades")
+        holder.btnVerResidente.setOnClickListener {
+            val intent = Intent(holder.btnVerResidente.context, ProfileSearchedPage::class.java).apply {
+                putExtra("residentId", residente.id)
+            }
+            startActivity(holder.btnVerResidente.context, intent, null)
+        }
     }
 
     override fun getItemCount(): Int {
