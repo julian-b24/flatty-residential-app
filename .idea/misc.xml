@@ -31,9 +31,13 @@
         <entry key="..\:/Users/julia/OneDrive/Documentos/temp/flatty-residential-app/app/src/main/res/drawable/bottom_sheet_bakcground.xml" value="0.187" />
         <entry key="..\:/Users/julia/OneDrive/Documentos/temp/flatty-residential-app/app/src/main/res/drawable/calendar.xml" value="0.1015" />
         <entry key="..\:/Users/julia/OneDrive/Documentos/temp/flatty-residential-app/app/src/main/res/drawable/two_wheeler_blue.xml" value="0.1" />
+        <entry key="..\:/Users/julia/OneDrive/Documentos/temp/flatty-residential-app/app/src/main/res/layout/activity_create_complaint.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/julia/OneDrive/Documentos/temp/flatty-residential-app/app/src/main/res/layout/activity_edit_profile.xml" value="0.1796875" />
-        <entry key="..\:/Users/julia/OneDrive/Documentos/temp/flatty-residential-app/app/src/main/res/layout/activity_favourites_list_resident.xml" value="0.5" />
-        <entry key="..\:/Users/julia/OneDrive/Documentos/temp/flatty-residential-app/app/src/main/res/layout/activity_profile_searched_page.xml" value="0.1796875" />
+        <entry key="..\:/Users/julia/OneDrive/Documentos/temp/flatty-residential-app/app/src/main/res/layout/activity_favourites_list_resident.xml" value="0.9" />
+        <entry key="..\:/Users/julia/OneDrive/Documentos/temp/flatty-residential-app/app/src/main/res/layout/activity_favourites_pages.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/julia/OneDrive/Documentos/temp/flatty-residential-app/app/src/main/res/layout/activity_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/julia/OneDrive/Documentos/temp/flatty-residential-app/app/src/main/res/layout/activity_profile_searched_page.xml" value="0.67" />
+        <entry key="..\:/Users/julia/OneDrive/Documentos/temp/flatty-residential-app/app/src/main/res/layout/activity_resident_profile_page.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/julia/OneDrive/Documentos/temp/flatty-residential-app/app/src/main/res/layout/activity_search_resident.xml" value="0.1796875" />
         <entry key="..\:/Users/julia/OneDrive/Documentos/temp/flatty-residential-app/app/src/main/res/layout/add_person_bottom_sheet.xml" value="0.5" />
         <entry key="..\:/Users/julia/OneDrive/Documentos/temp/flatty-residential-app/app/src/main/res/layout/add_vehicle_bottom_sheet.xml" value="0.3333333333333333" />

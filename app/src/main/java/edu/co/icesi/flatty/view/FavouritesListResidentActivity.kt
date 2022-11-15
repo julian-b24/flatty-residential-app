@@ -76,7 +76,6 @@ class FavouritesListResidentActivity : AppCompatActivity() {
 
                 bottomSheetView.findViewById<ImageButton>(R.id.newMotorcycleBtn).setImageResource(R.drawable.two_wheeler_gray)
                 bottomSheetView.findViewById<ImageButton>(R.id.newMotorcycleBtn).setBackgroundResource(R.drawable.gray_square)
-                Log.e(">>>", ":)")
             }
 
             bottomSheetView.findViewById<ImageButton>(R.id.newMotorcycleBtn).setOnClickListener {

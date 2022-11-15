@@ -25,7 +25,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14"
+        app:layout_constraintTop_toBottomOf="@+id/ageTV"
         app:shapeAppearance="?attr/shapeAppearanceLargeComponent">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -134,7 +134,7 @@
         app:srcCompat="@drawable/icon_sign_up2" />
 
     <TextView
-        android:id="@+id/textView13"
+        android:id="@+id/ApartmentTowerTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="26dp"
@@ -148,13 +148,13 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView7" />
 
     <TextView
-        android:id="@+id/textView14"
+        android:id="@+id/ageTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="Ingresa un email y tu contraseña"
-        app:layout_constraintStart_toStartOf="@+id/textView13"
-        app:layout_constraintTop_toBottomOf="@+id/textView13" />
+        app:layout_constraintStart_toStartOf="@+id/ApartmentTowerTV"
+        app:layout_constraintTop_toBottomOf="@+id/ApartmentTowerTV" />
 
     <CheckBox
         android:theme="@style/CheckBoxColor"
