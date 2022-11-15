@@ -19,4 +19,16 @@ class Resident {
         this.email = email
         this.password = password
     }
+
+    constructor(){
+        id = ""
+        name = ""
+        phone = ""
+        numberApartment = ""
+        age = ""
+        email = ""
+        password = ""
+    }
+
+
 }

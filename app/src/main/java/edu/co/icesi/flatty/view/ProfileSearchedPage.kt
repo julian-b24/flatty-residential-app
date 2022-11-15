@@ -14,10 +14,17 @@ class ProfileSearchedPage : AppCompatActivity() {
         binding = ActivityProfileSearchedPageBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
         binding.btnBackToSearchResident.setOnClickListener {
             finish()
         }
+
         binding.goToFavoritos.setOnClickListener{
+            var intent = Intent(this, FavouritesPages::class.java)
+            startActivity(intent)
+        }
+
+        binding.favouritesLyt.setOnClickListener {
             var intent = Intent(this, FavouritesPages::class.java)
             startActivity(intent)
         }

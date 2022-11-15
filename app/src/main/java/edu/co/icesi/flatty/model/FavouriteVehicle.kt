@@ -1,13 +1,9 @@
 package edu.co.icesi.flatty.model
 
-class FavouriteVehicle {
-    var model: String
-    var licensePlate: String
-    var vehicleType: VehicleType
+data class FavouriteVehicle (
 
-    constructor(model: String, licensePlate: String, vehicleType: VehicleType){
-        this.model = model
-        this.licensePlate = licensePlate
-        this.vehicleType = vehicleType
-    }
-}
+    var id: String = "",
+    var model: String = "",
+    var licensePlate: String = "",
+    var vehicleType: VehicleType = VehicleType.CAR
+)

@@ -14,12 +14,12 @@ import java.io.File
 
 class FavouriteVehicleAdapter : RecyclerView.Adapter<FavouriteVehicleView>(){
 
-    private val favouriteVehicleList = ArrayList<FavouriteVehicle>()
+    var favouriteVehicleList = ArrayList<FavouriteVehicle>()
 
     init{
-        favouriteVehicleList.add(FavouriteVehicle("Mazda 3", "ECX 564", VehicleType.CAR))
-        favouriteVehicleList.add(FavouriteVehicle("Raider 125 TVS", "HGI 29B", VehicleType.MOTORCYCLE))
-        favouriteVehicleList.add(FavouriteVehicle("Nissan March", "JOP 100", VehicleType.CAR))
+        favouriteVehicleList.add(FavouriteVehicle("fIgv8dlTTITEoz6Hgf90U3aqcWh2", "Mazda 3", "ECX 564", VehicleType.CAR))
+        favouriteVehicleList.add(FavouriteVehicle("qxUUtkNANiPkDRMlPTRm", "Raider 125 TVS", "HGI 29B", VehicleType.MOTORCYCLE))
+        favouriteVehicleList.add(FavouriteVehicle("sXUAg5FZQpwJQFRQzH5K", "Nissan March", "JOP 100", VehicleType.CAR))
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavouriteVehicleView {
