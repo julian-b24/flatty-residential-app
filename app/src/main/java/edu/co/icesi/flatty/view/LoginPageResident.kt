@@ -77,7 +77,7 @@ class LoginPageResident : AppCompatActivity() {
         binding.loginBtn.setOnClickListener {
             val email = binding.emailTI.text.toString()
             val password = binding.passwordTI.text.toString()
-            viewModel.loginUser(email, password, selectedResident)
+            viewModel.loginUser(email.trim(), password, selectedResident)
             /*
             Firebase.auth.signInWithEmailAndPassword(email, password).await()
             if(!selectedResident) {

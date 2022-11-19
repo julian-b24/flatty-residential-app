@@ -5,26 +5,23 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelStore
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.ktx.auth
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
 import edu.co.icesi.flatty.databinding.FragmentChatResidentBinding
-import edu.co.icesi.flatty.gioMessages.Mensaje
 import edu.co.icesi.flatty.gioMessages.MensajesAdapter
-import edu.co.icesi.flatty.gioMessages.TypeShows
-import edu.co.icesi.flatty.model.Chat
 import edu.co.icesi.flatty.model.Message
 import edu.co.icesi.flatty.viewModel.ChatResidentViewModel
+import edu.co.icesi.flatty.viewModel.State
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
+import java.util.*
 
 class ChatResidentFragment : Fragment() {
 
@@ -51,22 +48,37 @@ class ChatResidentFragment : Fragment() {
         binding.ChatRecycler.adapter = adapter
 
         binding.ivBtnAddMessage.setOnClickListener {
-            val mensaje = Mensaje(binding.tpMessage.text.toString(), TypeShows.ENVIADO)
-            adapter.addMensaje(mensaje)
-            binding.tpMessage.text.clear()
+            val msg = Message(
+                UUID.randomUUID().toString(),
+                Firebase.auth.currentUser!!.uid,
+                Date().time,
+                binding.tpMessage.text.toString()
+            )
+            //Enviar mensaje a la db
+            viewModel.saveMsg(msg)
+            binding.tpMessage.setText("")
         }
 
         viewModel.subcribeToMessage()
 
+
+        viewModel.messages.observe(viewLifecycleOwner){
+            adapter.clear()
+            for(msg in it.messages) {
+                adapter.addMensaje(msg)
+            }
+
+        }
+
         /*
         viewModel.messages.observe(this){
-            if(it.size >= 1) {
-                val m = it.last()
-                adapter.addMensaje(m)
-            }
+
         }*/
 
         return view
+    }
+
+    fun init() {
     }
 
     companion object {
