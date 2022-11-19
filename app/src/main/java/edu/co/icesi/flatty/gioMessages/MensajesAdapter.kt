@@ -40,15 +40,15 @@ class MensajesAdapter : RecyclerView.Adapter<MensajeView>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MensajeView {
         var inflater = LayoutInflater.from(parent.context)
-        val row = inflater.inflate(R.layout.message_row, parent, false)
+        val row = inflater.inflate(R.layout.message_container, parent, false)
         return MensajeView(row)
     }
 
     override fun onBindViewHolder(holder: MensajeView, position: Int) {
         val message = mensajes[position]
-        holder.twMensaje.text = message.text
+        holder.tvContentMSG.text = message.text
         if(message.author != Firebase.auth.currentUser!!.uid){
-            holder.twMensaje.setBackgroundColor(Color.parseColor("#EDEDED"))
+            holder.tvContentMSG.setBackgroundColor(Color.parseColor("#EDEDED"))
         }
         /*if(mensaje.typeShow == TypeShows.RECIBIDO) {
             holder.twMensaje.setBackgroundColor(Color.parseColor("#EDEDED"))
