@@ -1,20 +1,26 @@
 package edu.co.icesi.flatty.gioMessages
 
 import android.graphics.Color
+import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import edu.co.icesi.flatty.R
+import edu.co.icesi.flatty.databinding.MessageContainerBinding
+import edu.co.icesi.flatty.databinding.MessageReceivedContainerBinding
 import edu.co.icesi.flatty.model.Message
 import edu.co.icesi.flatty.quejas.Queja
 import edu.co.icesi.flatty.quejas.QuejaView
 import edu.co.icesi.flatty.viewModel.ChatResidentViewModel
 import edu.co.icesi.flatty.viewModel.LoginPageViewModel
+import java.text.SimpleDateFormat
+import java.util.Date
 
-class MensajesAdapter : RecyclerView.Adapter<MensajeView>() {
+class MensajesAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val mensajes = ArrayList<Message>()
 
@@ -38,21 +44,46 @@ class MensajesAdapter : RecyclerView.Adapter<MensajeView>() {
         notifyItemInserted(mensajes.size-1)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MensajeView {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         var inflater = LayoutInflater.from(parent.context)
-        val row = inflater.inflate(R.layout.message_container, parent, false)
-        return MensajeView(row)
+        lateinit var skeleton: RecyclerView.ViewHolder
+        when(viewType){
+            0->{
+                skeleton = OwnChatMessageHolder(inflater.inflate(R.layout.message_container, parent, false))
+            }
+            1->{
+                skeleton = OtherChatMessageHolder(inflater.inflate(R.layout.message_received_container, parent, false))
+            }
+        }
+        return skeleton
     }
 
-    override fun onBindViewHolder(holder: MensajeView, position: Int) {
-        val message = mensajes[position]
-        holder.tvContentMSG.text = message.text
-        if(message.author != Firebase.auth.currentUser!!.uid){
-            holder.tvContentMSG.setBackgroundColor(Color.parseColor("#EDEDED"))
+    override fun getItemViewType(position: Int): Int {
+        if (mensajes[position].author == Firebase.auth.currentUser?.uid) {
+            return 0;
+        }else{
+            return 1;
         }
-        /*if(mensaje.typeShow == TypeShows.RECIBIDO) {
-            holder.twMensaje.setBackgroundColor(Color.parseColor("#EDEDED"))
-        }*/
+    }
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        val message = mensajes[position]
+        when(holder.itemViewType){
+            0->{
+                val skeleton = holder as OwnChatMessageHolder
+                skeleton.messageTV.text = message.text
+                var date = Date(message.date)
+                var format = SimpleDateFormat("HH:mm aa")
+                skeleton.hourMessageTv.text = format.format(date)
+            }
+            1->{
+                val skeleton = holder as OtherChatMessageHolder
+                skeleton.messageTV.text = message.text
+                var date = Date(message.date)
+                var format = SimpleDateFormat("HH:mm aa")
+                skeleton.hourMessageTv.text = format.format(date)
+            }
+        }
     }
 
     override fun getItemCount(): Int {
@@ -64,4 +95,16 @@ class MensajesAdapter : RecyclerView.Adapter<MensajeView>() {
         mensajes.clear()
         notifyItemRangeRemoved(0,count)
     }
+}
+
+class OwnChatMessageHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
+    private val binding:MessageContainerBinding = MessageContainerBinding.bind(itemView)
+    val messageTV = binding.tvContentMSG
+    val hourMessageTv = binding.tvHourMSG
+}
+
+class OtherChatMessageHolder(itemView: View):RecyclerView.ViewHolder(itemView) {
+    private val binding:MessageReceivedContainerBinding = MessageReceivedContainerBinding.bind(itemView)
+    val messageTV = binding.tvContentReceivedMSG
+    val hourMessageTv = binding.tvHourReceivedMSG
 }

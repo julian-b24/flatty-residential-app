@@ -1,15 +1,11 @@
 package edu.co.icesi.flatty.view
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelStore
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -17,10 +13,6 @@ import edu.co.icesi.flatty.databinding.FragmentChatResidentBinding
 import edu.co.icesi.flatty.gioMessages.MensajesAdapter
 import edu.co.icesi.flatty.model.Message
 import edu.co.icesi.flatty.viewModel.ChatResidentViewModel
-import edu.co.icesi.flatty.viewModel.State
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import java.util.*
 
 class ChatResidentFragment : Fragment() {
