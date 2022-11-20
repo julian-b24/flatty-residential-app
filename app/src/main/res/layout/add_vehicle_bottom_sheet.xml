@@ -72,7 +72,7 @@
         android:layout_marginBottom="12dp"/>
 
     <Button
-        android:id="@+id/add_new_personBtn"
+        android:id="@+id/add_new_vehicleBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="115dp"
