@@ -65,7 +65,6 @@ class FavouritesListResidentActivity : AppCompatActivity() {
                 }else{
                     Toast.makeText(this, "Campos vacíos", Toast.LENGTH_LONG).show()
                 }
-
             }
 
             bottomSheetDialog.setContentView(bottomSheetView)
