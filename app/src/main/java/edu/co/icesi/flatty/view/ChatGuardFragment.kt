@@ -39,6 +39,7 @@ class ChatGuardFragment : Fragment() {
         binding.ChatRecycler.adapter = adapter
 
         viewModel.suscribeToChats()
+        viewModel.updateChats()
 
         viewModel.chats.observe(viewLifecycleOwner){
             adapter.clear()

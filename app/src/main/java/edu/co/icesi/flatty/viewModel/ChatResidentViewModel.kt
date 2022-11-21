@@ -64,8 +64,11 @@ class ChatResidentViewModel : ViewModel() {
             Firebase.firestore.collection("chats")
                 .document(userId!!).collection("room")
                 .document(guardId).collection("messages")
-                .document(UUID.randomUUID().toString())
+                .document(msg.id)
                 .set(msg)
+
+            Firebase.firestore.collection("chats")
+                .document(userId!!).update("lastMessage",msg.id.toString())
         }
     }
 }
