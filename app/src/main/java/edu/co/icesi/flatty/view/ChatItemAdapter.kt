@@ -1,19 +1,32 @@
 package edu.co.icesi.flatty.view
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import edu.co.icesi.flatty.R
+import edu.co.icesi.flatty.databinding.FragmentChatResidentBinding
+import edu.co.icesi.flatty.model.Chat
 import edu.co.icesi.flatty.model.ChatItem
+import java.text.SimpleDateFormat
+import java.util.*
+import kotlin.collections.ArrayList
 
 class ChatItemAdapter: RecyclerView.Adapter<ChatItemView>() {
 
     private val chatItemList = ArrayList<ChatItem>()
 
-    init {
-        chatItemList.add(ChatItem("Miriam Londoño", "Hola", "11:08"))
-        chatItemList.add(ChatItem("Camilo Londoño", "Gracias", "10:08"))
-        chatItemList.add(ChatItem("Andres Londoño", "Adios", "09:08"))
+    /*init {
+        chatItemList.add(ChatItem(UUID.randomUUID().toString(),UUID.randomUUID().toString(),"Miriam Londoño", "Hola", 1))
+        chatItemList.add(ChatItem(UUID.randomUUID().toString(),UUID.randomUUID().toString(),"Camilo Londoño", "Gracias", 2))
+        chatItemList.add(ChatItem(UUID.randomUUID().toString(),UUID.randomUUID().toString(),"Andres Londoño", "Adios", 3))
+        notifyItemRangeInserted(0,3)
+    }*/
+
+    fun addChat(chat: ChatItem){
+        chatItemList.add(chat)
+        notifyItemInserted(itemCount-1)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChatItemView {
@@ -27,11 +40,26 @@ class ChatItemAdapter: RecyclerView.Adapter<ChatItemView>() {
         val chatItem = chatItemList[position]
         skeleton.chatItemNameTV.text = chatItem.name
         skeleton.chatItemMessageTV.text = chatItem.message
-        skeleton.chatItemLastMessageHourTV.text = chatItem.lastMessageHour
+        var date = Date(chatItem.lastMessageHour)
+        var format = SimpleDateFormat("HH:mm aa")
+        skeleton.chatItemLastMessageHourTV.text = format.format(date)
+        skeleton.chatLayout.setOnClickListener {
+            val intent = Intent(skeleton.chatLayout.context, ChatPageGuard::class.java).apply {
+                putExtra("residentId",chatItem.friendId)
+                putExtra("residentName",chatItem.name)
+            }
+            startActivity(skeleton.chatLayout.context,intent,null)
+        }
     }
 
     override fun getItemCount(): Int {
         return chatItemList.size
+    }
+
+    fun clear() {
+        val count = chatItemList.count()
+        chatItemList.clear()
+        notifyItemRangeRemoved(0,count)
     }
 
 }

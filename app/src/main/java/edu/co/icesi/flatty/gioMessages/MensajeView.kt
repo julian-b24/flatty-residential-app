@@ -6,5 +6,5 @@ import androidx.recyclerview.widget.RecyclerView
 import edu.co.icesi.flatty.R
 
 class MensajeView(itemView:View) : RecyclerView.ViewHolder(itemView) {
-    var twMensaje : TextView = itemView.findViewById(R.id.twMessage)
+    var tvContentMSG : TextView = itemView.findViewById(R.id.tvContentMSG)
 }
