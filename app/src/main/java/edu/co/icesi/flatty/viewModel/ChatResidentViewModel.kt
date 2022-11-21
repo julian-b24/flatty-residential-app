@@ -17,7 +17,7 @@ import kotlin.collections.ArrayList
 
 class ChatResidentViewModel : ViewModel() {
     private var userId = Firebase.auth.currentUser?.uid
-    private val guardId = "ZVzV35a1W6htTBxh1DIm"
+    private val guardId = "qgq1ns9Ycmg9KaJKv44v2frHceG2"//"ZVzV35a1W6htTBxh1DIm"
 
     private val arrayMessages = arrayListOf<Message>()
     private val _messages: MutableLiveData<ChatState> = MutableLiveData(ChatState())
@@ -25,8 +25,8 @@ class ChatResidentViewModel : ViewModel() {
 
     fun subcribeToMessage() {
         viewModelScope.launch(Dispatchers.IO) {
-            Log.e(">>>",userId!!)
-            Log.e(">>>",guardId)
+            //Log.e(">>>",userId!!)
+            //Log.e(">>>",guardId)
 
             val listener=Firebase.firestore.collection("chats")
                 .document(userId!!)
@@ -45,8 +45,6 @@ class ChatResidentViewModel : ViewModel() {
                         }
                     }
                 }
-
-
         }
     }
 

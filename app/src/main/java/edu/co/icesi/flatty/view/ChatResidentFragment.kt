@@ -59,7 +59,6 @@ class ChatResidentFragment : Fragment() {
             for(msg in it.messages) {
                 adapter.addMensaje(msg)
             }
-
         }
 
         /*

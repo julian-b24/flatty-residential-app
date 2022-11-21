@@ -34,8 +34,8 @@ class LoginPageResident : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        viewModel.loggedUserType.observe(this){
-            when(it.userType){
+        viewModel.loggedUserType.observe(this) {
+            when (it.userType) {
                 UserType.RESIDENT -> {
                     Log.e(">>>", "IN A")
                     startActivity(Intent(this, ResidentProfilePage::class.java))

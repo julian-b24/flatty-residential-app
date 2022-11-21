@@ -4,56 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF">
+    tools:context=".view.ChatPageGuard">
 
     <ImageView
-        android:id="@+id/ivProfilePhoto"
+        android:id="@+id/ivProfilePhotoGC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/group_3015" />
+        app:srcCompat="@drawable/image_61" />
 
     <TextView
-        android:id="@+id/twProfileName"
+        android:id="@+id/twProfileNameGC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="8dp"
-        android:text="Porteria"
-        android:textColor="#272727"
-        app:layout_constraintStart_toEndOf="@+id/ivProfilePhoto"
-        app:layout_constraintTop_toTopOf="@+id/ivProfilePhoto" />
+        android:text="Residente "
+        app:layout_constraintStart_toEndOf="@+id/ivProfilePhotoGC"
+        app:layout_constraintTop_toTopOf="@+id/ivProfilePhotoGC" />
 
     <TextView
-        android:id="@+id/txtProfileStatus"
+        android:id="@+id/txtProfileStatusGC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:text="En línea"
+        android:text="En linea"
         android:textColor="#8B8B8B"
-        app:layout_constraintBottom_toBottomOf="@+id/ivProfilePhoto"
-        app:layout_constraintStart_toEndOf="@+id/ivProfilePhoto"
-        app:layout_constraintTop_toBottomOf="@+id/twProfileName" />
+        app:layout_constraintBottom_toBottomOf="@+id/ivProfilePhotoGC"
+        app:layout_constraintStart_toEndOf="@+id/ivProfilePhotoGC"
+        app:layout_constraintTop_toBottomOf="@+id/twProfileNameGC" />
 
-    <EditText
-        android:id="@+id/tpMessage"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginEnd="8dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textColor="#272727"
-        app:layout_constraintBottom_toBottomOf="@+id/ivBtnAddMessage"
-        app:layout_constraintEnd_toStartOf="@+id/ivBtnAddMessage"
+    <View
+        android:id="@+id/view3"
+        android:layout_width="wrap_content"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ivBtnAddMessage" />
+        app:layout_constraintTop_toBottomOf="@+id/ivProfilePhotoGC" />
 
     <ImageView
-        android:id="@+id/ivBtnAddMessage"
+        android:id="@+id/ivBtnAddMessageGC"
         android:layout_width="46dp"
         android:layout_height="46dp"
         android:layout_marginEnd="24dp"
@@ -62,37 +56,41 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/gio_send_message_btn" />
 
-    <View
-        android:id="@+id/view2"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginTop="16dp"
-        android:background="@android:color/darker_gray"
-        app:layout_constraintEnd_toEndOf="parent"
+    <EditText
+        android:id="@+id/tpMessageGC"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/edit_text_round_container"
+        android:ems="10"
+        android:hint="Envia un mensaje"
+        android:inputType="textPersonName"
+        android:textColor="#272727"
+        app:layout_constraintBottom_toBottomOf="@+id/ivBtnAddMessageGC"
+        app:layout_constraintEnd_toStartOf="@+id/ivBtnAddMessageGC"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivProfilePhoto" />
+        app:layout_constraintTop_toTopOf="@+id/ivBtnAddMessageGC" />
 
     <View
-        android:id="@+id/view"
-        android:layout_width="match_parent"
+        android:id="@+id/view4"
+        android:layout_width="wrap_content"
         android:layout_height="1dp"
         android:layout_marginBottom="16dp"
-        android:background="@android:color/darker_gray"
-        app:layout_constraintBottom_toTopOf="@+id/tpMessage"
+        app:layout_constraintBottom_toTopOf="@+id/tpMessageGC"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/ChatRecycler"
+        android:id="@+id/chatRecyclerGC"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/view"
+        app:layout_constraintBottom_toTopOf="@+id/ivBtnAddMessageGC"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view2" />
+        app:layout_constraintTop_toBottomOf="@+id/view3" />
 </androidx.constraintlayout.widget.ConstraintLayout>
