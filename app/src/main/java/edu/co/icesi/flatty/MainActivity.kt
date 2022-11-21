@@ -1,5 +1,6 @@
 package edu.co.icesi.flatty
 
+import android.Manifest
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -49,6 +50,10 @@ class MainActivity : AppCompatActivity() {
         binding = WelcomePageBinding.inflate(layoutInflater)
         val view = binding.root
         setContentView(view)
+
+        requestPermissions(arrayOf(
+            Manifest.permission.READ_EXTERNAL_STORAGE
+        ), 1)
 
         binding.loginBtn.setOnClickListener{
             val intent = Intent(this, LoginPageResident::class.java)

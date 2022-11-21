@@ -2,17 +2,12 @@ package edu.co.icesi.flatty.quejas
 
 import java.util.*
 
-class Queja {
-    var title : String
-    var createdOn : Date
-    var status : States
-
-    constructor(title : String, createdOn : Date, status : States) {
-        this.title = title
-        this.createdOn = createdOn
-        this.status = status
-    }
-}
+data class Queja (
+    var title : String = "",
+    var description: String = "",
+    var createdOn : Date = Date(),
+    var status : States = States.PENDIENTE
+)
 
 enum class States(val status:String) {
     PENDIENTE("Pendiente"),

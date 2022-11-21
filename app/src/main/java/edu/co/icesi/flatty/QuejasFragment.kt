@@ -7,7 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import edu.co.icesi.flatty.databinding.FragmentQuejasBinding
+import edu.co.icesi.flatty.model.Resident
+import edu.co.icesi.flatty.quejas.Queja
 import edu.co.icesi.flatty.quejas.QuejasAdapter
 import edu.co.icesi.flatty.view.CreateComplaint
 import edu.co.icesi.flatty.view.LoginPageResident
@@ -34,11 +39,29 @@ class QuejasFragment : Fragment() {
         binding.QuejasRecycler.setHasFixedSize(true)
         adapter = QuejasAdapter()
         binding.QuejasRecycler.adapter = adapter
+
+        val query = Firebase.firestore.collection("quejas")
+        query.get().addOnCompleteListener {
+            if(!it.result.isEmpty)
+            {
+                adapter.clearQuejasList()
+                var result2 = it.result.reversed()
+                for(queja in result2)
+                {
+                    val queja = queja.toObject(Queja::class.java)
+                    adapter.addQueja(queja)
+                }
+                adapter.notifyDataSetChanged()
+            }
+        }
+
         binding.imageView9.setOnClickListener {
             var intent = Intent(binding.root.context, CreateComplaint::class.java)
             startActivity(intent)
         }
-        // Inflate the layout for this fragment
+
+
+
         return view
     }
 
