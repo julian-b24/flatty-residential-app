@@ -35,8 +35,8 @@
 
             <ImageView
                 android:id="@+id/residentProfilePicIV"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="100dp"
+                android:layout_height="90dp"
                 android:layout_marginTop="107dp"
                 android:src="@drawable/resident_1"
                 app:layout_constraintEnd_toEndOf="@+id/textView3"
@@ -203,6 +203,18 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="Edad"
+                        android:textColor="#8B8B8B"
+                        app:layout_constraintBottom_toTopOf="@+id/residentAgeET"
+                        app:layout_constraintStart_toStartOf="@+id/residentAgeET"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
                         android:id="@+id/textView8"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -232,6 +244,23 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.037"
                         app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/textView7"
+                        tools:ignore="TouchTargetSizeCheck" />
+
+                    <EditText
+                        android:id="@+id/residentAgeET"
+                        android:layout_width="60dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/edit_text_round_container"
+                        android:ems="10"
+                        android:hint=''
+                        android:inputType="textPersonName"
+                        android:text="XX"
+                        android:textColor="#272727"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/residentTowerET"
                         app:layout_constraintTop_toBottomOf="@+id/textView7"
                         tools:ignore="TouchTargetSizeCheck" />
 

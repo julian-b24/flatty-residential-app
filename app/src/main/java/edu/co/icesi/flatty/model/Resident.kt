@@ -6,5 +6,6 @@ data class Resident(var id: String = "",
                     var numberApartment: String = "",
                     var age: String = "",
                     var email: String = "",
-                    var password: String = ""
+                    var password: String = "",
+                    var profilePhoto: String = "",
                     )

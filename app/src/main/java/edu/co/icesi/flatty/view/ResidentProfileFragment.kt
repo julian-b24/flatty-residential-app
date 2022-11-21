@@ -10,9 +10,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import com.bumptech.glide.Glide
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 import com.google.gson.Gson
 import edu.co.icesi.flatty.MainActivity
 import edu.co.icesi.flatty.R
@@ -85,9 +87,16 @@ class ResidentProfileFragment : Fragment() {
                 binding.phoneResident.text = resident.phone
                 binding.aptoResident.text = numberAparment
                 binding.towerResident.text = towerApartment
-
+                downloadImage(resident.profilePhoto)
             }
 
+        }
+    }
+
+    fun downloadImage(photoID:String?)
+    {
+        Firebase.storage.getReference().child("profile").child(photoID!!).downloadUrl.addOnSuccessListener {
+            Glide.with(binding.imageView3).load(it).into(binding.imageView3)
         }
     }
 
