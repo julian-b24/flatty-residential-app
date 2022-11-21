@@ -2,7 +2,6 @@ package edu.co.icesi.flatty.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.widget.*
 import androidx.lifecycle.lifecycleScope
@@ -14,7 +13,6 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import edu.co.icesi.flatty.R
 import edu.co.icesi.flatty.databinding.ActivityFavouritesListResidentBinding
-import edu.co.icesi.flatty.databinding.AddVehicleBottomSheetBinding
 import edu.co.icesi.flatty.model.FavouritePerson
 import edu.co.icesi.flatty.model.FavouriteVehicle
 import edu.co.icesi.flatty.model.VehicleType
@@ -67,7 +65,6 @@ class FavouritesListResidentActivity : AppCompatActivity() {
                 }else{
                     Toast.makeText(this, "Campos vacíos", Toast.LENGTH_LONG).show()
                 }
-
             }
 
             bottomSheetDialog.setContentView(bottomSheetView)
@@ -103,6 +100,18 @@ class FavouritesListResidentActivity : AppCompatActivity() {
                 bottomSheetView.findViewById<ImageButton>(R.id.newCarBtn).setBackgroundResource(R.drawable.gray_square)
             }
 
+            bottomSheetView.findViewById<Button>(R.id.add_new_vehicleBtn).setOnClickListener {
+                val model = bottomSheetView.findViewById<TextView>(R.id.newVehicleModelET).text.toString()
+                val licensePlate = bottomSheetView.findViewById<TextView>(R.id.newVehicleLicensePlateET).text.toString()
+                if (model.isNotEmpty() && licensePlate.isNotEmpty()){
+                    addVehicleToFavourites(model, licensePlate, typeNewVehicle)
+                    bottomSheetView.findViewById<TextView>(R.id.newVehicleModelET).text = ""
+                    bottomSheetView.findViewById<TextView>(R.id.newVehicleLicensePlateET).text = ""
+                }else{
+                    Toast.makeText(this,"Campos vacíos", Toast.LENGTH_LONG).show()
+                }
+            }
+
             bottomSheetDialog.setContentView(bottomSheetView)
             bottomSheetDialog.show()
 
@@ -112,6 +121,27 @@ class FavouritesListResidentActivity : AppCompatActivity() {
             finish()
         }
 
+
+    }
+
+    private fun addVehicleToFavourites(model: String, licensePlate: String, typeNewVehicle: VehicleType) {
+        lifecycleScope.launch(Dispatchers.IO){
+
+            val newVehicleReference = Firebase.firestore.collection("residents")
+                .document(residentId)
+                .collection("vehicles")
+                .document()
+
+            val newVehicleId = newVehicleReference.id
+            val newVehicle = FavouriteVehicle(newVehicleId, model, licensePlate, typeNewVehicle)
+
+            newVehicleReference.set(newVehicle)
+
+            withContext(Dispatchers.Main){
+                adapterFavouriteVehicle.addFavouriteVehicle(newVehicle)
+                Toast.makeText(this@FavouritesListResidentActivity, "Nuevo vehiculo añadido", Toast.LENGTH_LONG).show()
+            }
+        }
 
     }
 

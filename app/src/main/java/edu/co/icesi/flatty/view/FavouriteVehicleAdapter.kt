@@ -1,13 +1,12 @@
 package edu.co.icesi.flatty.view
 
-import android.graphics.drawable.Drawable
-import android.net.Uri
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import edu.co.icesi.flatty.R
+import edu.co.icesi.flatty.model.FavouritePerson
 import edu.co.icesi.flatty.model.FavouriteVehicle
 import edu.co.icesi.flatty.model.VehicleType
 import java.io.File
@@ -39,6 +38,11 @@ class FavouriteVehicleAdapter : RecyclerView.Adapter<FavouriteVehicleView>(){
             Log.e(">>>", "AQUÍ")
             skeleton.vehicleIcon.setImageResource(R.drawable.two_wheeler_blue)
         }
+    }
+
+    fun addFavouriteVehicle(newVehicle: FavouriteVehicle){
+        favouriteVehicleList.add(newVehicle)
+        notifyItemInserted(favouriteVehicleList.size-1)
     }
 
     override fun getItemCount(): Int {
