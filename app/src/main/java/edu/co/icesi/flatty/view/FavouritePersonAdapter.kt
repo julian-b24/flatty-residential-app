@@ -17,6 +17,11 @@ class FavouritePersonAdapter: RecyclerView.Adapter<FavouritePersonView>() {
         favouritePersonsList.add(FavouritePerson("Naty Lay", "DvUKJUtbEehGVHqxsUrhe0LnFrk2", "2.010.007.050"))
     }
 
+    fun addFavouritePerson(newPerson: FavouritePerson){
+        favouritePersonsList.add(newPerson)
+        notifyItemInserted(favouritePersonsList.size-1)
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavouritePersonView {
 
         var inflater = LayoutInflater.from(parent.context)
