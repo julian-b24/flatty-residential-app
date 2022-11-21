@@ -88,18 +88,6 @@ class FavouritesListResidentActivity : AppCompatActivity() {
 
                 bottomSheetView.findViewById<ImageButton>(R.id.newMotorcycleBtn).setImageResource(R.drawable.two_wheeler_gray)
                 bottomSheetView.findViewById<ImageButton>(R.id.newMotorcycleBtn).setBackgroundResource(R.drawable.gray_square)
-                val model = bottomSheetView.findViewById<TextView>(R.id.newVehicleModelET).text.toString()
-                val licensePlate = bottomSheetView.findViewById<TextView>(R.id.newVehicleLicensePlateET).text.toString()
-                if (model.isNotEmpty()&&licensePlate.isNotEmpty()){
-                    addVehicleToFavourites(model, licensePlate)
-                    bottomSheetView.findViewById<TextView>(R.id.newVehicleModelET).text = ""
-                    bottomSheetView.findViewById<TextView>(R.id.newVehicleLicensePlateET).text = ""
-
-                }else{
-                    Toast.makeText(this,"Campos vacíos", Toast.LENGTH_LONG).show()
-                }
-
-
             }
 
             bottomSheetView.findViewById<ImageButton>(R.id.newMotorcycleBtn).setOnClickListener {
@@ -110,6 +98,18 @@ class FavouritesListResidentActivity : AppCompatActivity() {
 
                 bottomSheetView.findViewById<ImageButton>(R.id.newCarBtn).setImageResource(R.drawable.directions_car_gray)
                 bottomSheetView.findViewById<ImageButton>(R.id.newCarBtn).setBackgroundResource(R.drawable.gray_square)
+            }
+
+            bottomSheetView.findViewById<Button>(R.id.add_new_vehicleBtn).setOnClickListener {
+                val model = bottomSheetView.findViewById<TextView>(R.id.newVehicleModelET).text.toString()
+                val licensePlate = bottomSheetView.findViewById<TextView>(R.id.newVehicleLicensePlateET).text.toString()
+                if (model.isNotEmpty() && licensePlate.isNotEmpty()){
+                    addVehicleToFavourites(model, licensePlate, typeNewVehicle)
+                    bottomSheetView.findViewById<TextView>(R.id.newVehicleModelET).text = ""
+                    bottomSheetView.findViewById<TextView>(R.id.newVehicleLicensePlateET).text = ""
+                }else{
+                    Toast.makeText(this,"Campos vacíos", Toast.LENGTH_LONG).show()
+                }
             }
 
             bottomSheetDialog.setContentView(bottomSheetView)
@@ -124,7 +124,7 @@ class FavouritesListResidentActivity : AppCompatActivity() {
 
     }
 
-    private fun addVehicleToFavourites(model: String, licensePlate: String) {
+    private fun addVehicleToFavourites(model: String, licensePlate: String, typeNewVehicle: VehicleType) {
         lifecycleScope.launch(Dispatchers.IO){
 
             val newVehicleReference = Firebase.firestore.collection("residents")
@@ -133,7 +133,7 @@ class FavouritesListResidentActivity : AppCompatActivity() {
                 .document()
 
             val newVehicleId = newVehicleReference.id
-            val newVehicle = FavouriteVehicle(newVehicleId, model, licensePlate)
+            val newVehicle = FavouriteVehicle(newVehicleId, model, licensePlate, typeNewVehicle)
 
             newVehicleReference.set(newVehicle)
 
