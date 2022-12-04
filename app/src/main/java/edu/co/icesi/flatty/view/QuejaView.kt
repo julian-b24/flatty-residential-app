@@ -1,4 +1,4 @@
-package edu.co.icesi.flatty.quejas
+package edu.co.icesi.flatty.view
 
 import android.view.View
 import android.widget.ImageView

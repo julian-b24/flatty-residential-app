@@ -1,11 +1,10 @@
-package edu.co.icesi.flatty.quejas
+package edu.co.icesi.flatty.view
 
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import edu.co.icesi.flatty.R
-import java.text.SimpleDateFormat
+import edu.co.icesi.flatty.model.*
 
 class QuejasAdapter : RecyclerView.Adapter<QuejaView>() {
 

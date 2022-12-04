@@ -1,4 +1,4 @@
-package edu.co.icesi.flatty.gioResidentes
+package edu.co.icesi.flatty.view
 
 import android.content.Intent
 import android.util.Log
@@ -8,7 +8,6 @@ import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import edu.co.icesi.flatty.R
 import edu.co.icesi.flatty.model.Resident
-import edu.co.icesi.flatty.view.ProfileSearchedPage
 
 class ResidentesAdapter : RecyclerView.Adapter<ResidenteView>() {
 

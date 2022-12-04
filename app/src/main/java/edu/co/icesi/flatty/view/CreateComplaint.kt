@@ -17,8 +17,8 @@ import com.google.firebase.ktx.Firebase
 import edu.co.icesi.flatty.R
 import edu.co.icesi.flatty.databinding.ActivityCreateComplaintBinding
 import edu.co.icesi.flatty.databinding.SignUpPage1Binding
-import edu.co.icesi.flatty.quejas.Queja
-import edu.co.icesi.flatty.quejas.States
+import edu.co.icesi.flatty.model.Queja
+import edu.co.icesi.flatty.model.States
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.runBlocking
 import java.text.SimpleDateFormat

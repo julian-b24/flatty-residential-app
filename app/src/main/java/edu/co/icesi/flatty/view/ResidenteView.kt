@@ -1,4 +1,4 @@
-package edu.co.icesi.flatty.gioResidentes
+package edu.co.icesi.flatty.view
 
 import android.view.View
 import android.widget.Button

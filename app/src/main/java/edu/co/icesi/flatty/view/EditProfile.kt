@@ -14,7 +14,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import edu.co.icesi.flatty.databinding.ActivityEditProfileBinding
 import edu.co.icesi.flatty.model.Resident
-import edu.co.icesi.flatty.quejas.Queja
+import edu.co.icesi.flatty.model.Queja
 import java.util.*
 
 class EditProfile : AppCompatActivity() {

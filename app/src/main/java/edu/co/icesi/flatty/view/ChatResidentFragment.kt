@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import edu.co.icesi.flatty.databinding.FragmentChatResidentBinding
-import edu.co.icesi.flatty.gioMessages.MensajesAdapter
 import edu.co.icesi.flatty.model.Message
 import edu.co.icesi.flatty.viewModel.ChatResidentViewModel
 import java.util.*

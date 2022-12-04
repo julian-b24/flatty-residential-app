@@ -7,16 +7,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.firestore.ktx.toObject
 import com.google.firebase.ktx.Firebase
-import edu.co.icesi.flatty.R
-import edu.co.icesi.flatty.databinding.ActivitySearchResidentBinding
 import edu.co.icesi.flatty.databinding.FragmentSearchResidentBinding
-import edu.co.icesi.flatty.gioResidentes.ResidentesAdapter
 import edu.co.icesi.flatty.model.Resident
 
 

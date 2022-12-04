@@ -1,4 +1,4 @@
-package edu.co.icesi.flatty
+package edu.co.icesi.flatty.view
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,15 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import edu.co.icesi.flatty.databinding.FragmentQuejasBinding
-import edu.co.icesi.flatty.model.Resident
-import edu.co.icesi.flatty.quejas.Queja
-import edu.co.icesi.flatty.quejas.QuejasAdapter
-import edu.co.icesi.flatty.view.CreateComplaint
-import edu.co.icesi.flatty.view.LoginPageResident
+import edu.co.icesi.flatty.model.Queja
 
 class QuejasFragment : Fragment() {
     private var _binding: FragmentQuejasBinding? = null

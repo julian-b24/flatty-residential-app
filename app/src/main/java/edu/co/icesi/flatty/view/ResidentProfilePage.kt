@@ -8,11 +8,8 @@ import androidx.fragment.app.Fragment
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.google.gson.Gson
-import edu.co.icesi.flatty.QuejasFragment
 import edu.co.icesi.flatty.R
 import edu.co.icesi.flatty.databinding.ActivityResidentProfilePageBinding
-import edu.co.icesi.flatty.databinding.ActivitySearchResidentBinding
-import edu.co.icesi.flatty.databinding.LoginPageResidentBinding
 import edu.co.icesi.flatty.model.Resident
 
 

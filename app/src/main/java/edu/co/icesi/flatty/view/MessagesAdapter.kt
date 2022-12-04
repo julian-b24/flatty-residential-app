@@ -6,8 +6,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import edu.co.icesi.flatty.R
-import edu.co.icesi.flatty.gioMessages.OtherChatMessageHolder
-import edu.co.icesi.flatty.gioMessages.OwnChatMessageHolder
 import edu.co.icesi.flatty.model.Message
 import java.text.SimpleDateFormat
 import java.util.*

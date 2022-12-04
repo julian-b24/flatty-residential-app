@@ -1,4 +1,4 @@
-package edu.co.icesi.flatty.quejas
+package edu.co.icesi.flatty.model
 
 import java.util.*
 

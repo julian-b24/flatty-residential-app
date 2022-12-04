@@ -1,11 +1,8 @@
-package edu.co.icesi.flatty.gioMessages
+package edu.co.icesi.flatty.view
 
-import android.graphics.Color
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -13,10 +10,6 @@ import edu.co.icesi.flatty.R
 import edu.co.icesi.flatty.databinding.MessageContainerBinding
 import edu.co.icesi.flatty.databinding.MessageReceivedContainerBinding
 import edu.co.icesi.flatty.model.Message
-import edu.co.icesi.flatty.quejas.Queja
-import edu.co.icesi.flatty.quejas.QuejaView
-import edu.co.icesi.flatty.viewModel.ChatResidentViewModel
-import edu.co.icesi.flatty.viewModel.LoginPageViewModel
 import java.text.SimpleDateFormat
 import java.util.Date
 

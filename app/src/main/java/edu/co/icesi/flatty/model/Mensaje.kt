@@ -1,4 +1,4 @@
-package edu.co.icesi.flatty.gioMessages
+package edu.co.icesi.flatty.model
 
 class Mensaje {
 
