@@ -5,6 +5,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 import edu.co.icesi.flatty.R
 import edu.co.icesi.flatty.databinding.FragmentChatResidentBinding
 import edu.co.icesi.flatty.model.Chat
@@ -40,6 +43,9 @@ class ChatItemAdapter: RecyclerView.Adapter<ChatItemView>() {
         val chatItem = chatItemList[position]
         skeleton.chatItemNameTV.text = chatItem.name
         skeleton.chatItemMessageTV.text = chatItem.message
+        Firebase.storage.getReference().child("profile").child(chatItem.profilePhoto).downloadUrl.addOnSuccessListener {
+            Glide.with(skeleton.chatItemImage).load(it).into(skeleton.chatItemImage)
+        }
         var date = Date(chatItem.lastMessageHour)
         var format = SimpleDateFormat("HH:mm aa")
         skeleton.chatItemLastMessageHourTV.text = format.format(date)

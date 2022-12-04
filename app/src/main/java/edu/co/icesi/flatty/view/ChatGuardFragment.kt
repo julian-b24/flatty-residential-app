@@ -8,8 +8,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import edu.co.icesi.flatty.R
 import edu.co.icesi.flatty.databinding.FragmentChatListBinding
+import edu.co.icesi.flatty.model.Queja
+import edu.co.icesi.flatty.model.Resident
 import edu.co.icesi.flatty.viewModel.ChatResidentViewModel
 import edu.co.icesi.flatty.viewModel.ChatsGuardViewModel
 
@@ -45,6 +49,11 @@ class ChatGuardFragment : Fragment() {
             adapter.clear()
             for(chat in it) {
                 Log.e(">>>",chat.toString())
+                val query = Firebase.firestore.collection("residents").document(chat.friendId)
+                query.get().addOnCompleteListener {
+                    val resident = it.result.toObject(Resident::class.java)
+                    chat.profilePhoto = resident!!.profilePhoto
+                }
                 adapter.addChat(chat)
             }
         }

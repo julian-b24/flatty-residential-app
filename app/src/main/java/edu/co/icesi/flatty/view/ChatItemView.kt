@@ -1,6 +1,7 @@
 package edu.co.icesi.flatty.view
 
 import android.view.View
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
@@ -11,4 +12,5 @@ class ChatItemView(itemView: View): RecyclerView.ViewHolder(itemView) {
     var chatItemMessageTV: TextView = itemView.findViewById(R.id.chatItemMessageTV)
     var chatItemLastMessageHourTV: TextView = itemView.findViewById(R.id.chatItemLastMessageHourTV)
     var chatLayout: ConstraintLayout = itemView.findViewById(R.id.clChat)
+    var chatItemImage : ImageView = itemView.findViewById(R.id.imageView2)
 }

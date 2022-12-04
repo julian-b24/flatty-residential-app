@@ -6,6 +6,9 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 import edu.co.icesi.flatty.R
 import edu.co.icesi.flatty.model.Resident
 
@@ -33,6 +36,9 @@ class ResidentesAdapter : RecyclerView.Adapter<ResidenteView>() {
         val residente = residentes[position]
         holder.txtResidentName.text = residente.name
         holder.txtResidentPhone.text = residente.phone
+        Firebase.storage.getReference().child("profile").child(residente.profilePhoto).downloadUrl.addOnSuccessListener {
+            Glide.with(holder.txResidentePhoto).load(it).into(holder.txResidentePhoto)
+        }
         Log.e(">>>", "View loades")
         holder.btnVerResidente.setOnClickListener {
             val intent = Intent(holder.btnVerResidente.context, ProfileSearchedPage::class.java).apply {

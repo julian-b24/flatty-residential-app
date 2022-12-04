@@ -3,9 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Giova/OneDrive/Documentos/Useful University Files/7th Semester/Apps Moviles/flatty-residential-app/app/src/main/res/layout/activity_chat_page_guard.xml" value="0.33" />
         <entry key="..\:/Users/Giova/OneDrive/Documentos/Useful University Files/7th Semester/Apps Moviles/flatty-residential-app/app/src/main/res/layout/activity_create_complaint.xml" value="0.33" />
         <entry key="..\:/Users/Giova/OneDrive/Documentos/Useful University Files/7th Semester/Apps Moviles/flatty-residential-app/app/src/main/res/layout/activity_edit_profile.xml" value="0.2949640287769784" />
+        <entry key="..\:/Users/Giova/OneDrive/Documentos/Useful University Files/7th Semester/Apps Moviles/flatty-residential-app/app/src/main/res/layout/activity_profile_searched_page.xml" value="0.2" />
         <entry key="..\:/Users/Giova/OneDrive/Documentos/Useful University Files/7th Semester/Apps Moviles/flatty-residential-app/app/src/main/res/layout/activity_search_resident.xml" value="0.2" />
+        <entry key="..\:/Users/Giova/OneDrive/Documentos/Useful University Files/7th Semester/Apps Moviles/flatty-residential-app/app/src/main/res/layout/chat_item.xml" value="0.67" />
+        <entry key="..\:/Users/Giova/OneDrive/Documentos/Useful University Files/7th Semester/Apps Moviles/flatty-residential-app/app/src/main/res/layout/fragment_chat_list.xml" value="0.25" />
+        <entry key="..\:/Users/Giova/OneDrive/Documentos/Useful University Files/7th Semester/Apps Moviles/flatty-residential-app/app/src/main/res/layout/fragment_chat_resident.xml" value="0.1109375" />
+        <entry key="..\:/Users/Giova/OneDrive/Documentos/Useful University Files/7th Semester/Apps Moviles/flatty-residential-app/app/src/main/res/layout/fragment_chat_watch_man.xml" value="0.21" />
         <entry key="..\:/Users/Giova/OneDrive/Documentos/Useful University Files/7th Semester/Apps Moviles/flatty-residential-app/app/src/main/res/layout/fragment_quejas.xml" value="0.2" />
         <entry key="..\:/Users/Giova/OneDrive/Documentos/Useful University Files/7th Semester/Apps Moviles/flatty-residential-app/app/src/main/res/layout/fragment_resident_profile.xml" value="0.33" />
         <entry key="..\:/Users/Giova/OneDrive/Documentos/Useful University Files/7th Semester/Apps Moviles/flatty-residential-app/app/src/main/res/layout/fragment_search_resident.xml" value="0.33" />

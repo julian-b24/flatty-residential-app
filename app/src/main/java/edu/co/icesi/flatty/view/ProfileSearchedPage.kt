@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import androidx.lifecycle.lifecycleScope
+import com.bumptech.glide.Glide
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.ktx.storage
 import edu.co.icesi.flatty.databinding.ActivityProfileSearchedPageBinding
 import edu.co.icesi.flatty.model.FavouritePerson
 import edu.co.icesi.flatty.model.FavouriteVehicle
@@ -64,7 +66,9 @@ class ProfileSearchedPage : AppCompatActivity() {
                 binding.PhoneNumberTV.text = resident.phone
                 binding.ApartamentNumberTV.text = numberAparment
                 binding.apartamentTowerTv.text = towerApartment
-
+                Firebase.storage.getReference().child("profile").child(resident.profilePhoto).downloadUrl.addOnSuccessListener {
+                    Glide.with(binding.imageView3).load(it).into(binding.imageView3)
+                }
             }
 
         }
