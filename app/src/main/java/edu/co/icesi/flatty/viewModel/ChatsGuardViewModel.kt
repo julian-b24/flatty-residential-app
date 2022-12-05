@@ -37,8 +37,8 @@ class ChatsGuardViewModel : ViewModel() {
                         if (doc.type.name == "ADDED") {
                             friendId = doc.document.get("id") as String
                             idMessage = doc.document.get("lastMessage") as String
-                            Log.e(">>>",friendId)
-                            Log.e(">>>",idMessage)
+                            Log.e(">>>", friendId)
+                            Log.e(">>>", idMessage)
 
                             viewModelScope.launch(Dispatchers.IO) {
                                 var msg = Firebase.firestore.collection("chats").document(friendId)
@@ -69,10 +69,10 @@ class ChatsGuardViewModel : ViewModel() {
             Firebase.firestore.collection("chats")
                 .addSnapshotListener { data, e ->
                     for (doc in data!!.documentChanges) {
-                        if(doc.type.name == "MODIFIED"){
+                        if (doc.type.name == "MODIFIED") {
                             var chatId = doc.document.id
-                            for(chat in arrayChats){
-                                if (chat.friendId == chatId){
+                            for (chat in arrayChats) {
+                                if (chat.friendId == chatId) {
                                     chat.friendId = chatId
                                 }
                             }
