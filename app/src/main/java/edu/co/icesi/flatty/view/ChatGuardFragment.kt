@@ -46,6 +46,8 @@ class ChatGuardFragment : Fragment() {
         viewModel.updateChats()
 
         viewModel.chats.observe(viewLifecycleOwner){
+            Log.e(">>>", "Chats Observed:")
+            Log.e(">>>", it.toString())
             adapter.clear()
             for(chat in it) {
                 Log.e(">>>",chat.toString())
