@@ -77,8 +77,8 @@ class ResidentProfileFragment : Fragment() {
 
             resident = result.toObject(Resident::class.java)!!
 
-            val numberAparment = resident.numberApartment.slice(IntRange(0, 2))
-            val towerApartment = resident.numberApartment[3].toString()
+            val numberAparment = resident.numberApartment.slice(IntRange(1, 3))
+            val towerApartment = resident.numberApartment[0].toString()
 
             withContext(Dispatchers.Main){
                 binding.residentNameTV.text = resident.name

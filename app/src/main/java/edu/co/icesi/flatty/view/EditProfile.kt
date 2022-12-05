@@ -42,8 +42,8 @@ class EditProfile : AppCompatActivity() {
         val query = Firebase.firestore.collection("residents").document(Firebase.auth.uid!!)
         query.get().addOnCompleteListener {
             val resident = it.result.toObject(Resident::class.java)
-            val numberAparment = resident!!.numberApartment.slice(IntRange(0, 2))
-            val towerApartment = resident!!.numberApartment[3].toString()
+            val numberAparment = resident!!.numberApartment.slice(IntRange(1, 3))
+            val towerApartment = resident!!.numberApartment[0].toString()
             binding.residentNameET.setText(resident!!.name)
             binding.residentEmailET.setText(resident!!.email)
             binding.residentPhoneET.setText(resident!!.phone)
