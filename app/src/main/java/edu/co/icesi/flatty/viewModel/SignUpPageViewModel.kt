@@ -8,11 +8,14 @@ import androidx.lifecycle.viewModelScope
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import edu.co.icesi.flatty.model.Chat
+import edu.co.icesi.flatty.model.Message
 import edu.co.icesi.flatty.model.Resident
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.tasks.await
 import kotlinx.coroutines.withContext
+import java.util.UUID
 
 class SignUpPageViewModel : ViewModel(){
 
@@ -30,6 +33,7 @@ class SignUpPageViewModel : ViewModel(){
                     if(it.isSuccessful){
                         it.result;
                         Log.e(">>>","Exito")
+                        createChat(resident.id)
                     }else{
                         val alfa = it.exception
                         Log.e(">>>", alfa!!.localizedMessage)
@@ -58,6 +62,21 @@ class SignUpPageViewModel : ViewModel(){
         }?.addOnFailureListener{
             //Toast.makeText(this,it.message, Toast.LENGTH_LONG).show()
         }
+    }
+
+    fun createChat(residentId:String) {
+        val guardId = "qgq1ns9Ycmg9KaJKv44v2frHceG2"
+        val defMessage = "Aqui porteria"
+        var uuidLastMessage = UUID.randomUUID().toString()
+
+        var newChat = Chat(residentId,uuidLastMessage)
+        var newMessage = Message(uuidLastMessage,guardId,0,defMessage)
+
+        Firebase.firestore.collection("chats").document(residentId).set(newChat)
+
+        Firebase.firestore.collection("chats").document(residentId)
+            .collection("room").document(guardId)
+            .collection("messages").document(uuidLastMessage).set(newMessage)
     }
 }
 
